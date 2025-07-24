@@ -104,6 +104,7 @@ export function ProcedureSelectionModal({
                     (total, insumo) => total + insumo.valor,
                     0
                   );
+                  const custoTotalPorSessao = custoTotalInsumos + procedure.custoProfissionalPorSessao;
                   const isSelected = selectedProcedure?.id === procedure.id;
 
                   return (
@@ -141,7 +142,7 @@ export function ProcedureSelectionModal({
                         {procedure.tempoSessaoMin} min
                       </td>
                       <td className="py-3 px-4 text-sm text-careflow-gray-700">
-                        {formatCurrency(custoTotalInsumos)}
+                        {formatCurrency(custoTotalPorSessao)}
                       </td>
                       <td className="py-3 px-4">
                         <button

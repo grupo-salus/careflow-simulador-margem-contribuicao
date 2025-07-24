@@ -1,22 +1,25 @@
 import { SimulationInput, SimulationResult } from '../types';
 
 export function calcularMargemContribuicao(input: SimulationInput): SimulationResult {
-  const { precoSessao, numeroSessoes, insumos, tempoSessaoMin } = input;
+  const { precoSessao, numeroSessoes, insumos, tempoSessaoMin, custoProfissionalPorSessao } = input;
   
   // Validação básica
-  if (precoSessao <= 0 || numeroSessoes <= 0 || tempoSessaoMin <= 0) {
+  if (precoSessao <= 0 || numeroSessoes <= 0 || tempoSessaoMin <= 0 || custoProfissionalPorSessao < 0) {
     throw new Error('Todos os valores devem ser maiores que zero');
   }
 
-  // Cálculo do custo variável por sessão
-  const custoVariavelPorSessao = insumos.reduce((total, insumo) => total + insumo.valor, 0);
+  // Cálculo do custo de insumos por sessão
+  const custoInsumosPorSessao = insumos.reduce((total, insumo) => total + insumo.valor, 0);
   
-  // Cálculos principais
+  // Cálculo do custo total por sessão (insumos + profissional)
+  const custoTotalPorSessao = custoInsumosPorSessao + custoProfissionalPorSessao;
+  
+  // Cálculos principais seguindo a planilha
   const receitaTotal = precoSessao * numeroSessoes;
-  const custoTotalVariavel = custoVariavelPorSessao * numeroSessoes;
+  const custoTotalVariavel = custoTotalPorSessao * numeroSessoes;
   const margemContribuicao = receitaTotal - custoTotalVariavel;
-  const margemPercentual = receitaTotal > 0 ? (margemContribuicao / receitaTotal) * 100 : 0;
   const margemPorSessao = numeroSessoes > 0 ? margemContribuicao / numeroSessoes : 0;
+  const margemPercentual = precoSessao > 0 ? (margemPorSessao / precoSessao) * 100 : 0;
   const tempoTotalHoras = (numeroSessoes * tempoSessaoMin) / 60;
   const lucroPorHora = tempoTotalHoras > 0 ? margemContribuicao / tempoTotalHoras : 0;
 
@@ -28,7 +31,7 @@ export function calcularMargemContribuicao(input: SimulationInput): SimulationRe
     margemPorSessao,
     tempoTotalHoras,
     lucroPorHora,
-    custoVariavelPorSessao
+    custoVariavelPorSessao: custoTotalPorSessao
   };
 }
 

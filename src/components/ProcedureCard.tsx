@@ -11,6 +11,7 @@ interface ProcedureCardProps {
 
 export function ProcedureCard({ procedure, isSelected, onClick }: ProcedureCardProps) {
   const custoTotalInsumos = procedure.insumos.reduce((total, insumo) => total + insumo.valor, 0);
+  const custoTotalPorSessao = custoTotalInsumos + procedure.custoProfissionalPorSessao;
   
   return (
     <div
@@ -51,7 +52,7 @@ export function ProcedureCard({ procedure, isSelected, onClick }: ProcedureCardP
       
       <div className="mt-3 pt-3 border-t border-careflow-gray-100">
         <div className="text-xs text-careflow-gray-500">
-          <span className="font-medium">Custo por sessão:</span> {formatCurrency(custoTotalInsumos)}
+          <span className="font-medium">Custo por sessão:</span> {formatCurrency(custoTotalPorSessao)}
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import {
   Clock,
   Target,
   Percent,
+  Package,
+  TrendingDown,
 } from "lucide-react";
 import { ProcedureSelector } from "./components/ProcedureSelector";
 import { SimulationForm } from "./components/SimulationForm";
@@ -46,6 +48,8 @@ function App() {
         numeroSessoes,
         insumos: selectedProcedure.insumos,
         tempoSessaoMin: selectedProcedure.tempoSessaoMin,
+        custoProfissionalPorSessao:
+          selectedProcedure.custoProfissionalPorSessao,
       });
     } catch (error) {
       console.error("Erro no cálculo:", error);
@@ -121,6 +125,19 @@ function App() {
                 <>
                   <div className="flex-1 overflow-y-auto mb-4">
                     <div className="space-y-3">
+                      {/* Custo Profissional - Primeiro com destaque sutil */}
+                      <div className="flex justify-between items-center py-2 border-b border-careflow-gray-100">
+                        <span className="text-sm font-medium text-careflow-primary">
+                          Custo profissional
+                        </span>
+                        <span className="text-sm font-semibold text-careflow-primary">
+                          {formatCurrency(
+                            selectedProcedure.custoProfissionalPorSessao
+                          )}
+                        </span>
+                      </div>
+
+                      {/* Insumos */}
                       {selectedProcedure.insumos.map((insumo, index) => (
                         <div
                           key={index}
@@ -139,14 +156,14 @@ function App() {
                   <div className="border-t border-careflow-gray-200 pt-4">
                     <div className="flex justify-between items-center">
                       <span className="font-medium text-careflow-gray-900">
-                        Custo insumos sessão (R$):
+                        Custo total sessão (R$):
                       </span>
                       <span className="font-bold text-careflow-primary">
                         {formatCurrency(
                           selectedProcedure.insumos.reduce(
                             (total, insumo) => total + insumo.valor,
                             0
-                          )
+                          ) + selectedProcedure.custoProfissionalPorSessao
                         )}
                       </span>
                     </div>
@@ -180,14 +197,13 @@ function App() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <ResultCard
-                  title="Margem de Contribuição"
-                  value={formatCurrency(simulationResult.margemContribuicao)}
-                  subtitle={`${formatPercentage(
-                    simulationResult.margemPercentual
-                  )} da receita`}
-                  icon={Target}
-                  variant="blue"
-                  trend="up"
+                  title="Custo Total por Sessão"
+                  value={formatCurrency(
+                    simulationResult.custoVariavelPorSessao
+                  )}
+                  subtitle="Insumos + Profissional"
+                  icon={Package}
+                  variant="red"
                 />
 
                 <ResultCard
@@ -201,11 +217,38 @@ function App() {
                 />
 
                 <ResultCard
+                  title="Custo Total Variável"
+                  value={formatCurrency(simulationResult.custoTotalVariavel)}
+                  subtitle={`${formatCurrency(
+                    simulationResult.custoVariavelPorSessao
+                  )} × ${numeroSessoes} sessões`}
+                  icon={TrendingDown}
+                  variant="orange-dark"
+                />
+
+                <ResultCard
+                  title="Margem de Contribuição"
+                  value={formatCurrency(simulationResult.margemContribuicao)}
+                  subtitle="Lucro total do procedimento"
+                  icon={Target}
+                  variant="blue"
+                  trend="up"
+                />
+
+                <ResultCard
                   title="Margem por Sessão"
                   value={formatCurrency(simulationResult.margemPorSessao)}
                   subtitle="Lucro líquido unitário"
                   icon={Percent}
                   variant="purple"
+                />
+
+                <ResultCard
+                  title="Margem de Contribuição %"
+                  value={formatPercentage(simulationResult.margemPercentual)}
+                  subtitle="Percentual de lucro por sessão"
+                  icon={TrendingUp}
+                  variant="green"
                 />
 
                 <ResultCard
@@ -217,32 +260,6 @@ function App() {
                   icon={Clock}
                   variant="orange"
                 />
-
-                <div className="sm:col-span-2 lg:col-span-2">
-                  <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6">
-                    <h3 className="text-lg font-semibold text-careflow-gray-900 mb-4">
-                      Resumo Executivo
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <span className="text-careflow-gray-600">
-                          Custo Total Variável:
-                        </span>
-                        <p className="font-semibold text-red-600">
-                          {formatCurrency(simulationResult.custoTotalVariavel)}
-                        </p>
-                      </div>
-                      <div>
-                        <span className="text-careflow-gray-600">
-                          Margem %:
-                        </span>
-                        <p className="font-semibold text-green-600">
-                          {formatPercentage(simulationResult.margemPercentual)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           ) : (

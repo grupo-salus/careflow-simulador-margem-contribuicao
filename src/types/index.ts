@@ -9,6 +9,7 @@ export interface Procedure {
   precoSugerido: number;
   numeroSessoes: number;
   tempoSessaoMin: number;
+  custoProfissionalPorSessao: number;
   insumos: Insumo[];
 }
 
@@ -17,6 +18,7 @@ export interface SimulationInput {
   numeroSessoes: number;
   insumos: Insumo[];
   tempoSessaoMin: number;
+  custoProfissionalPorSessao: number;
 }
 
 export interface SimulationResult {

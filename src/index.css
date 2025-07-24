@@ -49,6 +49,14 @@
     @apply icon-box bg-gradient-to-r from-careflow-success to-green-600 text-white;
   }
 
+  .icon-box-red {
+    @apply icon-box bg-gradient-to-r from-red-500 to-red-600 text-white;
+  }
+
+  .icon-box-orange-dark {
+    @apply icon-box bg-gradient-to-r from-orange-500 to-orange-600 text-white;
+  }
+
   .card-header-careflow {
     @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white p-4 rounded-t-lg;
   }
