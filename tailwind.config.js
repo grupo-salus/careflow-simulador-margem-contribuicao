@@ -5,11 +5,15 @@ export default {
     extend: {
       colors: {
         'careflow': {
-          'primary': '#1e3a8a', // Azul escuro similar ao da sidebar
-          'secondary': '#3b82f6', // Azul médio
-          'purple': '#a855f7', // Roxo do gradiente
+          'primary': '#8b5cf6', // Roxo principal do Careflow
+          'secondary': '#a855f7', // Roxo secundário
+          'purple': '#8b5cf6', // Roxo do gradiente
           'orange': '#f97316', // Laranja do gradiente
           'pink': '#ec4899', // Rosa do gradiente
+          'accent': '#f59e0b', // Laranja dourado para destaques
+          'success': '#10b981', // Verde para sucessos
+          'warning': '#f59e0b', // Amarelo para avisos
+          'error': '#ef4444', // Vermelho para erros
           'gray': {
             50: '#f8fafc',
             100: '#f1f5f9',
@@ -35,8 +39,10 @@ export default {
         'careflow': '0.5rem',
       },
       backgroundImage: {
-        'gradient-careflow': 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%)',
-        'gradient-blue': 'linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%)',
+        'gradient-careflow': 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f97316 100%)',
+        'gradient-purple': 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%)',
+        'gradient-orange': 'linear-gradient(135deg, #f97316 0%, #f59e0b 100%)',
+        'gradient-sidebar': 'linear-gradient(180deg, #8b5cf6 0%, #ec4899 50%, #f97316 100%)',
       }
     },
   },

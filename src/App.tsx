@@ -56,24 +56,27 @@ function App() {
   const hasValidSimulation = simulationResult !== null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-careflow-gray-50 to-white">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
+      <div className="bg-white shadow-sm border-b border-careflow-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
+              {/* CareFlow Logo */}
               <img
                 src="https://careflowsb.wetoksoft.com.br/images/careflow.png"
                 alt="Careflow Logo"
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
-              <div>
-                <h1 className="text-xl font-bold text-careflow-gray-900">
+
+              {/* Simulator Section */}
+              <div className="flex items-center gap-3 ml-6 pl-6 border-l border-careflow-gray-200">
+                <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink rounded-full p-2">
+                  <Calculator className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-lg font-medium text-careflow-gray-900">
                   Simulador de Margem de Contribuição
-                </h1>
-                <p className="text-sm text-careflow-gray-600">
-                  Careflow - Gestão Estética
-                </p>
+                </span>
               </div>
             </div>
           </div>
@@ -165,8 +168,8 @@ function App() {
           {hasValidSimulation ? (
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="icon-box-blue">
-                  <TrendingUp className="w-5 h-5" />
+                <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink p-3 rounded-lg">
+                  <TrendingUp className="w-5 h-5 text-white" />
                 </div>
                 <h2 className="text-xl font-bold text-careflow-gray-900">
                   Resultados da Simulação
@@ -242,7 +245,9 @@ function App() {
             </div>
           ) : (
             <div className="bg-white rounded-lg border-2 border-dashed border-careflow-gray-300 p-12 text-center">
-              <Calculator className="w-16 h-16 text-careflow-gray-400 mx-auto mb-4" />
+              <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                <Calculator className="w-10 h-10 text-white" />
+              </div>
               <h3 className="text-lg font-medium text-careflow-gray-900 mb-2">
                 Aguardando Simulação
               </h3>

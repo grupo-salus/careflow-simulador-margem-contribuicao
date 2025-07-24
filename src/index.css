@@ -18,7 +18,7 @@
 
 @layer components {
   .btn-careflow-primary {
-    @apply bg-gradient-careflow text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg;
   }
   
   .card-careflow {
@@ -34,19 +34,27 @@
   }
 
   .icon-box-blue {
-    @apply icon-box bg-gradient-to-br from-careflow-secondary to-careflow-primary text-white;
+    @apply icon-box bg-gradient-to-r from-careflow-purple to-careflow-pink text-white;
   }
 
   .icon-box-purple {
-    @apply icon-box bg-gradient-to-br from-careflow-purple to-careflow-pink text-white;
+    @apply icon-box bg-gradient-to-r from-careflow-purple to-careflow-secondary text-white;
   }
 
   .icon-box-orange {
-    @apply icon-box bg-gradient-to-br from-careflow-orange to-red-500 text-white;
+    @apply icon-box bg-gradient-to-r from-careflow-orange to-careflow-accent text-white;
   }
 
   .icon-box-green {
-    @apply icon-box bg-gradient-to-br from-green-500 to-emerald-600 text-white;
+    @apply icon-box bg-gradient-to-r from-careflow-success to-green-600 text-white;
+  }
+
+  .card-header-careflow {
+    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white p-4 rounded-t-lg;
+  }
+
+  .badge-careflow {
+    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white text-xs font-medium px-2 py-1 rounded-full;
   }
 }
 
