@@ -406,13 +406,19 @@ function App() {
                         </div>
                       </div>
                       <div className="col-span-4">
-                        <span className="text-sm font-bold text-green-600">
+                        <span className={`text-sm font-bold ${
+                          simulationResult.margemContribuicao >= 0 
+                            ? "text-green-600" 
+                            : "text-red-600"
+                        }`}>
                           {formatCurrency(simulationResult.margemContribuicao)}
                         </span>
                       </div>
                       <div className="col-span-3">
                         <span className="text-xs text-careflow-gray-600">
-                          Lucro total do procedimento
+                          {simulationResult.margemContribuicao >= 0 
+                            ? "Lucro total do procedimento" 
+                            : "Prejuízo total do procedimento"}
                         </span>
                       </div>
                     </div>
@@ -428,11 +434,17 @@ function App() {
                         <div className="text-sm font-medium text-careflow-gray-900">
                           Margem de Contribuição
                         </div>
-                        <div className="text-sm font-bold text-green-600">
+                        <div className={`text-sm font-bold ${
+                          simulationResult.margemContribuicao >= 0 
+                            ? "text-green-600" 
+                            : "text-red-600"
+                        }`}>
                           {formatCurrency(simulationResult.margemContribuicao)}
                         </div>
                         <div className="text-xs text-careflow-gray-600">
-                          Lucro total do procedimento
+                          {simulationResult.margemContribuicao >= 0 
+                            ? "Lucro total do procedimento" 
+                            : "Prejuízo total do procedimento"}
                         </div>
                       </div>
                     </div>
@@ -452,13 +464,19 @@ function App() {
                         </div>
                       </div>
                       <div className="col-span-4">
-                        <span className="text-sm font-bold text-careflow-gray-900">
+                        <span className={`text-sm font-bold ${
+                          simulationResult.margemPorSessao >= 0 
+                            ? "text-careflow-gray-900" 
+                            : "text-red-600"
+                        }`}>
                           {formatCurrency(simulationResult.margemPorSessao)}
                         </span>
                       </div>
                       <div className="col-span-3">
                         <span className="text-xs text-careflow-gray-600">
-                          Lucro líquido unitário
+                          {simulationResult.margemPorSessao >= 0 
+                            ? "Lucro líquido unitário" 
+                            : "Prejuízo líquido unitário"}
                         </span>
                       </div>
                     </div>
@@ -474,11 +492,17 @@ function App() {
                         <div className="text-sm font-medium text-careflow-gray-900">
                           Margem por Sessão
                         </div>
-                        <div className="text-sm font-bold text-careflow-gray-900">
+                        <div className={`text-sm font-bold ${
+                          simulationResult.margemPorSessao >= 0 
+                            ? "text-careflow-gray-900" 
+                            : "text-red-600"
+                        }`}>
                           {formatCurrency(simulationResult.margemPorSessao)}
                         </div>
                         <div className="text-xs text-careflow-gray-600">
-                          Lucro líquido unitário
+                          {simulationResult.margemPorSessao >= 0 
+                            ? "Lucro líquido unitário" 
+                            : "Prejuízo líquido unitário"}
                         </div>
                       </div>
                     </div>
@@ -498,13 +522,19 @@ function App() {
                         </div>
                       </div>
                       <div className="col-span-4">
-                        <span className="text-sm font-bold text-careflow-gray-900">
+                        <span className={`text-sm font-bold ${
+                          simulationResult.margemPercentual >= 0 
+                            ? "text-careflow-gray-900" 
+                            : "text-red-600"
+                        }`}>
                           {formatPercentage(simulationResult.margemPercentual)}
                         </span>
                       </div>
                       <div className="col-span-3">
                         <span className="text-xs text-careflow-gray-600">
-                          Percentual de lucro por sessão
+                          {simulationResult.margemPercentual >= 0 
+                            ? "Percentual de lucro por sessão" 
+                            : "Percentual de prejuízo por sessão"}
                         </span>
                       </div>
                     </div>
@@ -520,11 +550,17 @@ function App() {
                         <div className="text-sm font-medium text-careflow-gray-900">
                           Margem de Contribuição %
                         </div>
-                        <div className="text-sm font-bold text-careflow-gray-900">
+                        <div className={`text-sm font-bold ${
+                          simulationResult.margemPercentual >= 0 
+                            ? "text-careflow-gray-900" 
+                            : "text-red-600"
+                        }`}>
                           {formatPercentage(simulationResult.margemPercentual)}
                         </div>
                         <div className="text-xs text-careflow-gray-600">
-                          Percentual de lucro por sessão
+                          {simulationResult.margemPercentual >= 0 
+                            ? "Percentual de lucro por sessão" 
+                            : "Percentual de prejuízo por sessão"}
                         </div>
                       </div>
                     </div>
@@ -539,19 +575,26 @@ function App() {
                             <Clock className="w-5 h-5" />
                           </div>
                           <span className="text-sm font-medium text-careflow-gray-900">
-                            Lucro por Hora
+                            {simulationResult.lucroPorHora >= 0 
+                              ? "Lucro por Hora" 
+                              : "Prejuízo por Hora"}
                           </span>
                         </div>
                       </div>
                       <div className="col-span-4">
-                        <span className="text-sm font-bold text-careflow-gray-900">
+                        <span className={`text-sm font-bold ${
+                          simulationResult.lucroPorHora >= 0 
+                            ? "text-careflow-gray-900" 
+                            : "text-red-600"
+                        }`}>
                           {formatCurrency(simulationResult.lucroPorHora)}
                         </span>
                       </div>
                       <div className="col-span-3">
                         <span className="text-xs text-careflow-gray-600">
-                          {simulationResult.tempoTotalHoras.toFixed(1)}h de
-                          trabalho total
+                          {simulationResult.lucroPorHora >= 0 
+                            ? `${simulationResult.tempoTotalHoras.toFixed(1)}h de trabalho total` 
+                            : `${simulationResult.tempoTotalHoras.toFixed(1)}h de trabalho total`}
                         </span>
                       </div>
                     </div>
@@ -565,14 +608,21 @@ function App() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-medium text-careflow-gray-900">
-                          Lucro por Hora
+                          {simulationResult.lucroPorHora >= 0 
+                            ? "Lucro por Hora" 
+                            : "Prejuízo por Hora"}
                         </div>
-                        <div className="text-sm font-bold text-careflow-gray-900">
+                        <div className={`text-sm font-bold ${
+                          simulationResult.lucroPorHora >= 0 
+                            ? "text-careflow-gray-900" 
+                            : "text-red-600"
+                        }`}>
                           {formatCurrency(simulationResult.lucroPorHora)}
                         </div>
                         <div className="text-xs text-careflow-gray-600">
-                          {simulationResult.tempoTotalHoras.toFixed(1)}h de
-                          trabalho total
+                          {simulationResult.lucroPorHora >= 0 
+                            ? `${simulationResult.tempoTotalHoras.toFixed(1)}h de trabalho total` 
+                            : `${simulationResult.tempoTotalHoras.toFixed(1)}h de trabalho total`}
                         </div>
                       </div>
                     </div>
