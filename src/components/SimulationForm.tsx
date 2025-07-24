@@ -1,7 +1,6 @@
-import React from 'react';
-import { Procedure } from '../types';
-import { InputField } from './InputField';
-import { CostBreakdown } from './CostBreakdown';
+import React from "react";
+import { Procedure } from "../types";
+import { InputField } from "./InputField";
 
 interface SimulationFormProps {
   selectedProcedure: Procedure | null;
@@ -9,7 +8,6 @@ interface SimulationFormProps {
   numeroSessoes: number;
   onPrecoSessaoChange: (value: number) => void;
   onNumeroSessoesChange: (value: number) => void;
-  custoVariavelPorSessao: number;
 }
 
 export function SimulationForm({
@@ -18,7 +16,6 @@ export function SimulationForm({
   numeroSessoes,
   onPrecoSessaoChange,
   onNumeroSessoesChange,
-  custoVariavelPorSessao
 }: SimulationFormProps) {
   if (!selectedProcedure) {
     return (
@@ -31,10 +28,12 @@ export function SimulationForm({
   }
 
   return (
-    <div className="space-y-6">
-      <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6">
-        <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">Parâmetros da Simulação</h3>
-        
+    <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full flex flex-col">
+      <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">
+        Parâmetros da Simulação
+      </h3>
+
+      <div className="flex-1">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <InputField
             label="Preço por Sessão"
@@ -45,7 +44,7 @@ export function SimulationForm({
             type="currency"
             step={0.01}
           />
-          
+
           <InputField
             label="Número de Sessões"
             value={numeroSessoes}
@@ -59,15 +58,11 @@ export function SimulationForm({
 
         <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <p className="text-sm text-blue-700">
-            <strong>Tempo por sessão:</strong> {selectedProcedure.tempoSessaoMin} minutos
+            <strong>Tempo por sessão:</strong>{" "}
+            {selectedProcedure.tempoSessaoMin} minutos
           </p>
         </div>
       </div>
-
-      <CostBreakdown 
-        insumos={selectedProcedure.insumos}
-        custoTotalPorSessao={custoVariavelPorSessao}
-      />
     </div>
   );
 }
