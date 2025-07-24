@@ -248,6 +248,7 @@ A aplicação fornece os seguintes indicadores financeiros em ordem lógica:
 ## 🔄 Histórico de Atualizações
 
 ### Versão Atual
+
 - ✅ **42 procedimentos** organizados alfabeticamente
 - ✅ **IDs numéricos** (1-42) para melhor organização
 - ✅ **Custo profissional** integrado aos cálculos
