@@ -69,24 +69,24 @@ export function ResultCard({
 
   return (
     <div
-      className={`p-6 rounded-lg border shadow-card hover:shadow-careflow transition-all duration-300 ${getCardClasses()}`}
+      className={`p-4 sm:p-6 rounded-lg border shadow-card hover:shadow-careflow transition-all duration-300 ${getCardClasses()}`}
     >
       <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <h3 className="text-sm font-medium text-careflow-gray-600 mb-1">
+        <div className="flex-1 min-w-0">
+          <h3 className="text-xs sm:text-sm font-medium text-careflow-gray-600 mb-1">
             {title}
           </h3>
-          <p className="text-2xl font-bold text-careflow-gray-900 mb-1">
+          <p className="text-lg sm:text-xl lg:text-2xl font-bold text-careflow-gray-900 mb-1 break-words">
             {value}
           </p>
           {subtitle && (
-            <p className={`text-sm font-medium ${getTrendColor()}`}>
+            <p className={`text-xs sm:text-sm font-medium ${getTrendColor()} break-words`}>
               {subtitle}
             </p>
           )}
         </div>
-        <div className={getIconClasses()}>
-          <Icon className="w-6 h-6" />
+        <div className={`${getIconClasses()} flex-shrink-0 ml-3`}>
+          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
         </div>
       </div>
     </div>

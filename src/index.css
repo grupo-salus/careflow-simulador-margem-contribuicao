@@ -14,11 +14,19 @@
     font-weight: 600;
     line-height: 1.2;
   }
+
+  /* Improve touch targets on mobile */
+  @media (max-width: 640px) {
+    button, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
 }
 
 @layer components {
   .btn-careflow-primary {
-    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base;
   }
   
   .card-careflow {
@@ -26,11 +34,11 @@
   }
   
   .input-careflow {
-    @apply w-full px-4 py-3 bg-white border border-careflow-gray-300 rounded-lg focus:ring-2 focus:ring-careflow-primary focus:border-careflow-primary transition-all duration-200 hover:border-careflow-gray-400;
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 bg-white border border-careflow-gray-300 rounded-lg focus:ring-2 focus:ring-careflow-primary focus:border-careflow-primary transition-all duration-200 hover:border-careflow-gray-400 text-sm sm:text-base;
   }
 
   .icon-box {
-    @apply p-3 rounded-lg flex items-center justify-center;
+    @apply p-2 sm:p-3 rounded-lg flex items-center justify-center;
   }
 
   .icon-box-blue {
@@ -58,11 +66,45 @@
   }
 
   .card-header-careflow {
-    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white p-4 rounded-t-lg;
+    @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white p-3 sm:p-4 rounded-t-lg;
   }
 
   .badge-careflow {
     @apply bg-gradient-to-r from-careflow-purple to-careflow-pink text-white text-xs font-medium px-2 py-1 rounded-full;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-sm {
+    @apply text-xs sm:text-sm;
+  }
+
+  .text-responsive-base {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-responsive-lg {
+    @apply text-base sm:text-lg;
+  }
+
+  .text-responsive-xl {
+    @apply text-lg sm:text-xl;
+  }
+
+  /* Responsive spacing utilities */
+  .p-responsive {
+    @apply p-3 sm:p-4;
+  }
+
+  .px-responsive {
+    @apply px-3 sm:px-4;
+  }
+
+  .py-responsive {
+    @apply py-2 sm:py-3;
+  }
+
+  .gap-responsive {
+    @apply gap-3 sm:gap-4;
   }
 }
 
@@ -82,4 +124,23 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a1a1a1;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Improve touch scrolling */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better focus states for mobile */
+  input:focus, button:focus, select:focus, textarea:focus {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+  }
 }

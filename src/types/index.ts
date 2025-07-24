@@ -4,7 +4,7 @@ export interface Insumo {
 }
 
 export interface Procedure {
-  id: string;
+  id: number;
   nome: string;
   precoSugerido: number;
   numeroSessoes: number;

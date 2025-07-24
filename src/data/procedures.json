@@ -11,7 +11,7 @@
         "valor": 12.5
       },
       {
-        "nome": "Tips",
+        "nome": "Tips", 
         "valor": 3.2
       },
       {
@@ -21,6 +21,22 @@
       {
         "nome": "Base coat",
         "valor": 3.5
+      },
+      {
+        "nome": "Lixa",
+        "valor": 1.2
+      },
+      {
+        "nome": "Alicate descartável",
+        "valor": 2.5
+      },
+      {
+        "nome": "Esmalte",
+        "valor": 3.8
+      },
+      {
+        "nome": "Top coat",
+        "valor": 4.2
       }
     ],
     "custoProfissionalPorSessao": 18.78

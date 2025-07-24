@@ -64,7 +64,8 @@ function App() {
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-careflow-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          {/* Desktop Header */}
+          <div className="hidden md:flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
               {/* CareFlow Logo */}
               <img
@@ -84,16 +85,37 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* Mobile Header */}
+          <div className="md:hidden py-4">
+            <div className="flex items-center justify-center">
+              <img
+                src="https://careflowsb.wetoksoft.com.br/images/careflow.png"
+                alt="Careflow Logo"
+                className="h-8 w-auto"
+              />
+            </div>
+            <div className="mt-3 text-center">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink rounded-full p-2">
+                  <Calculator className="w-5 h-5 text-white" />
+                </div>
+                <h1 className="text-xl font-bold text-careflow-gray-900">
+                  Simulador de Margem de Contribuição
+                </h1>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
         {/* Top Section - Input Forms */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
           {/* Left Column - Procedure Selection */}
-          <div className="lg:col-span-1 h-80">
-            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full">
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[300px] sm:h-96">
               <ProcedureSelector
                 procedures={procedures}
                 selectedProcedure={selectedProcedure}
@@ -103,8 +125,8 @@ function App() {
           </div>
 
           {/* Middle Column - Simulation Form */}
-          <div className="lg:col-span-1 h-80">
-            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full">
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[300px] sm:h-96">
               <SimulationForm
                 selectedProcedure={selectedProcedure}
                 precoSessao={precoSessao}
@@ -116,15 +138,15 @@ function App() {
           </div>
 
           {/* Right Column - Cost Breakdown */}
-          <div className="lg:col-span-1 h-80">
-            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full flex flex-col">
-              <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">
+          <div className="lg:col-span-1">
+            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[300px] sm:h-96 flex flex-col">
+              <h3 className="text-lg font-semibold text-careflow-gray-900 mb-4 sm:mb-6">
                 Breakdown de Custos
               </h3>
               {selectedProcedure ? (
                 <>
                   <div className="flex-1 overflow-y-auto mb-4">
-                    <div className="space-y-3">
+                    <div className="space-y-3 pr-3">
                       {/* Custo Profissional - Primeiro com destaque sutil */}
                       <div className="flex justify-between items-center py-2 border-b border-careflow-gray-100">
                         <span className="text-sm font-medium text-careflow-primary">
@@ -155,10 +177,10 @@ function App() {
                   </div>
                   <div className="border-t border-careflow-gray-200 pt-4">
                     <div className="flex justify-between items-center">
-                      <span className="font-medium text-careflow-gray-900">
+                      <span className="font-medium text-careflow-gray-900 text-sm sm:text-base">
                         Custo total sessão (R$):
                       </span>
-                      <span className="font-bold text-careflow-primary">
+                      <span className="font-bold text-careflow-primary text-sm sm:text-base">
                         {formatCurrency(
                           selectedProcedure.insumos.reduce(
                             (total, insumo) => total + insumo.valor,
@@ -171,8 +193,8 @@ function App() {
                 </>
               ) : (
                 <div className="flex-1 flex items-center justify-center">
-                  <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-8 text-center w-full max-w-xs mx-auto">
-                    <p className="text-careflow-gray-500 text-lg">
+                  <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-6 sm:p-8 text-center w-full max-w-xs mx-auto">
+                    <p className="text-careflow-gray-500 text-base sm:text-lg">
                       Selecione um procedimento
                     </p>
                   </div>
@@ -185,17 +207,17 @@ function App() {
         {/* Bottom Section - Results */}
         <div className="w-full">
           {hasValidSimulation ? (
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink p-3 rounded-lg">
-                  <TrendingUp className="w-5 h-5 text-white" />
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink p-2 sm:p-3 rounded-lg">
+                  <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <h2 className="text-xl font-bold text-careflow-gray-900">
+                <h2 className="text-lg sm:text-xl font-bold text-careflow-gray-900">
                   Resultados da Simulação
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <ResultCard
                   title="Custo Total por Sessão"
                   value={formatCurrency(
@@ -263,14 +285,14 @@ function App() {
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-lg border-2 border-dashed border-careflow-gray-300 p-12 text-center">
-              <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                <Calculator className="w-10 h-10 text-white" />
+            <div className="bg-white rounded-lg border-2 border-dashed border-careflow-gray-300 p-6 sm:p-12 text-center">
+              <div className="bg-gradient-to-r from-careflow-purple to-careflow-pink p-3 sm:p-4 rounded-full w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 flex items-center justify-center">
+                <Calculator className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              <h3 className="text-lg font-medium text-careflow-gray-900 mb-2">
+              <h3 className="text-base sm:text-lg font-medium text-careflow-gray-900 mb-2">
                 Aguardando Simulação
               </h3>
-              <p className="text-careflow-gray-600">
+              <p className="text-careflow-gray-600 text-sm sm:text-base">
                 Selecione um procedimento e preencha os valores para ver os
                 resultados da margem de contribuição.
               </p>
