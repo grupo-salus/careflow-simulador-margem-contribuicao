@@ -91,6 +91,34 @@ Cada procedimento inclui uma lista detalhada de insumos com seus respectivos cus
 - `npm run build` - Gera a build de produção
 - `npm run preview` - Visualiza a build de produção
 - `npm run lint` - Executa o linter para verificar qualidade do código
+- `npm run deploy` - Faz o deploy para o GitHub Pages
+
+## 🚀 Deploy no GitHub Pages
+
+### Configuração Automática
+
+1. **Configure o GitHub Pages no repositório:**
+
+   - Vá para Settings > Pages
+   - Source: Deploy from a branch
+   - Branch: gh-pages
+   - Folder: / (root)
+
+2. **Execute o deploy:**
+
+   ```bash
+   npm run deploy
+   ```
+
+3. **Acesse a aplicação:**
+   - URL: `https://seu-usuario.github.io/careflow-simulador-margem-contribuicao/`
+
+### Configurações Realizadas
+
+- ✅ **Base path configurado** no `vite.config.ts`
+- ✅ **Script de deploy** adicionado no `package.json`
+- ✅ **gh-pages** instalado como dependência
+- ✅ **Build testado** e funcionando
 
 ## 📁 Estrutura do Projeto
 
@@ -165,6 +193,3 @@ A aplicação fornece os seguintes indicadores financeiros:
 - **Margem Percentual**: Percentual da margem em relação à receita
 - **Margem por Sessão**: Valor da margem dividido pelo número de sessões
 - **Lucro por Hora**: Rentabilidade considerando o tempo investido
-
-
-
