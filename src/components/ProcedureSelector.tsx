@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { ChevronDown, Search, List } from 'lucide-react';
+import { List } from 'lucide-react';
 import { Procedure } from '../types';
 import { SearchInput } from './SearchInput';
 import { ProcedureSelectionModal } from './ProcedureSelectionModal';
