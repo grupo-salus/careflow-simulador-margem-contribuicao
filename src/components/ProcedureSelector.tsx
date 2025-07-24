@@ -131,7 +131,7 @@ export function ProcedureSelector({ procedures, selectedProcedure, onProcedureSe
               </div>
               <button
                 onClick={() => onProcedureSelect(null)}
-                className="text-careflow-gray-400 hover:text-careflow-gray-600"
+                className="p-1.5 text-careflow-error hover:text-white hover:bg-careflow-error rounded-full transition-all duration-200"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

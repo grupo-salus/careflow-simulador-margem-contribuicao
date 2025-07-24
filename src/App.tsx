@@ -114,7 +114,7 @@ function App() {
           {/* Right Column - Cost Breakdown */}
           <div className="lg:col-span-1 h-80">
             <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full flex flex-col">
-              <h3 className="text-lg font-semibold text-careflow-gray-900 mb-4">
+              <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">
                 Breakdown de Custos
               </h3>
               {selectedProcedure ? (
@@ -154,9 +154,9 @@ function App() {
                 </>
               ) : (
                 <div className="flex-1 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-careflow-gray-500 text-sm">
-                      Selecione um procedimento para ver o breakdown de custos
+                  <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-8 text-center w-full max-w-xs mx-auto">
+                    <p className="text-careflow-gray-500 text-lg">
+                      Selecione um procedimento
                     </p>
                   </div>
                 </div>

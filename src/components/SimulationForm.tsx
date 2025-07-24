@@ -19,10 +19,17 @@ export function SimulationForm({
 }: SimulationFormProps) {
   if (!selectedProcedure) {
     return (
-      <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-8 text-center">
-        <p className="text-careflow-gray-500 text-lg">
-          Selecione um procedimento para começar a simulação
-        </p>
+      <div className="h-full flex flex-col">
+        <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">
+          Parâmetros da Simulação
+        </h3>
+        <div className="flex-1 flex items-center justify-center">
+          <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-8 text-center w-full max-w-xs mx-auto">
+            <p className="text-careflow-gray-500 text-lg">
+              Selecione um procedimento
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
