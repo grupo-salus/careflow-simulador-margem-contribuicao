@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-careflow-primary {
+    @apply bg-gradient-careflow text-white font-medium py-3 px-6 rounded-lg hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  
+  .card-careflow {
+    @apply bg-white rounded-lg border border-careflow-gray-200 shadow-card hover:shadow-careflow transition-all duration-300;
+  }
+  
+  .input-careflow {
+    @apply w-full px-4 py-3 bg-white border border-careflow-gray-300 rounded-lg focus:ring-2 focus:ring-careflow-primary focus:border-careflow-primary transition-all duration-200 hover:border-careflow-gray-400;
+  }
+
+  .icon-box {
+    @apply p-3 rounded-lg flex items-center justify-center;
+  }
+
+  .icon-box-blue {
+    @apply icon-box bg-gradient-to-br from-careflow-secondary to-careflow-primary text-white;
+  }
+
+  .icon-box-purple {
+    @apply icon-box bg-gradient-to-br from-careflow-purple to-careflow-pink text-white;
+  }
+
+  .icon-box-orange {
+    @apply icon-box bg-gradient-to-br from-careflow-orange to-red-500 text-white;
+  }
+
+  .icon-box-green {
+    @apply icon-box bg-gradient-to-br from-green-500 to-emerald-600 text-white;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}

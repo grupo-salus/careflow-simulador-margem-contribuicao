@@ -1,0 +1,62 @@
+[
+  {
+    "id": "pernas-laser",
+    "nome": "Depilação a Laser - Pernas",
+    "precoSugerido": 120,
+    "numeroSessoes": 8,
+    "tempoSessaoMin": 45,
+    "insumos": [
+      { "nome": "Gel de contato", "valor": 1.20 },
+      { "nome": "Luva descartável", "valor": 0.80 },
+      { "nome": "Papel toalha", "valor": 0.50 }
+    ]
+  },
+  {
+    "id": "criolipolise-flancos",
+    "nome": "Criolipólise - Flancos",
+    "precoSugerido": 350,
+    "numeroSessoes": 4,
+    "tempoSessaoMin": 60,
+    "insumos": [
+      { "nome": "Placa de crioproteção", "valor": 8.00 },
+      { "nome": "Pano higiênico", "valor": 1.50 },
+      { "nome": "Luva", "valor": 1.00 }
+    ]
+  },
+  {
+    "id": "radiofrequencia-facial",
+    "nome": "Radiofrequência Facial",
+    "precoSugerido": 180,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 50,
+    "insumos": [
+      { "nome": "Gel condutor", "valor": 2.50 },
+      { "nome": "Luva descartável", "valor": 0.80 },
+      { "nome": "Lenço demaquilante", "valor": 1.20 }
+    ]
+  },
+  {
+    "id": "massagem-modeladora",
+    "nome": "Massagem Modeladora",
+    "precoSugerido": 85,
+    "numeroSessoes": 10,
+    "tempoSessaoMin": 40,
+    "insumos": [
+      { "nome": "Óleo de massagem", "valor": 3.50 },
+      { "nome": "Papel toalha", "valor": 0.80 },
+      { "nome": "Luva", "valor": 0.60 }
+    ]
+  },
+  {
+    "id": "microagulhamento",
+    "nome": "Microagulhamento Facial",
+    "precoSugerido": 200,
+    "numeroSessoes": 4,
+    "tempoSessaoMin": 55,
+    "insumos": [
+      { "nome": "Agulhas descartáveis", "valor": 15.00 },
+      { "nome": "Sérum vitamina C", "valor": 8.50 },
+      { "nome": "Máscara calmante", "valor": 4.20 }
+    ]
+  }
+]
