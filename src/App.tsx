@@ -100,13 +100,15 @@ function App() {
 
           {/* Middle Column - Simulation Form */}
           <div className="lg:col-span-1 h-80">
-            <SimulationForm
-              selectedProcedure={selectedProcedure}
-              precoSessao={precoSessao}
-              numeroSessoes={numeroSessoes}
-              onPrecoSessaoChange={setPrecoSessao}
-              onNumeroSessoesChange={setNumeroSessoes}
-            />
+            <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full">
+              <SimulationForm
+                selectedProcedure={selectedProcedure}
+                precoSessao={precoSessao}
+                numeroSessoes={numeroSessoes}
+                onPrecoSessaoChange={setPrecoSessao}
+                onNumeroSessoesChange={setNumeroSessoes}
+              />
+            </div>
           </div>
 
           {/* Right Column - Cost Breakdown */}

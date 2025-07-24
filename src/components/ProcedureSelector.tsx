@@ -64,12 +64,12 @@ export function ProcedureSelector({ procedures, selectedProcedure, onProcedureSe
   };
 
   return (
-    <div className="mb-6">
-      <label className="block text-sm font-medium text-gray-700 mb-2">
+    <div className="h-full flex flex-col">
+      <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">
         Selecione o Procedimento
-      </label>
+      </h3>
       
-      <div className="space-y-2">
+      <div className="flex-1 space-y-2">
         {/* Campo de busca */}
         <div className="relative" ref={searchRef}>
           <SearchInput

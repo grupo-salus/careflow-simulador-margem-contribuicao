@@ -28,7 +28,7 @@ export function SimulationForm({
   }
 
   return (
-    <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-full flex flex-col">
+    <div className="h-full flex flex-col">
       <h3 className="text-lg font-semibold text-careflow-gray-900 mb-6">
         Parâmetros da Simulação
       </h3>
