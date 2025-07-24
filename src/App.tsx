@@ -217,71 +217,367 @@ function App() {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                <ResultCard
-                  title="Custo Total por Sessão"
-                  value={formatCurrency(
-                    simulationResult.custoVariavelPorSessao
-                  )}
-                  subtitle="Insumos + Profissional"
-                  icon={Package}
-                  variant="red"
-                />
+              {/* Layout em tabela */}
+              <div className="bg-white rounded-lg border border-careflow-gray-200 overflow-hidden">
+                {/* Cabeçalho da tabela - Desktop */}
+                <div className="hidden sm:block bg-careflow-gray-50 border-b border-careflow-gray-200 px-4 py-3">
+                  <div className="grid grid-cols-12 gap-4 items-center">
+                    <div className="col-span-5">
+                      <span className="text-xs font-medium text-careflow-gray-600">
+                        Indicador
+                      </span>
+                    </div>
+                    <div className="col-span-4">
+                      <span className="text-xs font-medium text-careflow-gray-600">
+                        Valor
+                      </span>
+                    </div>
+                    <div className="col-span-3">
+                      <span className="text-xs font-medium text-careflow-gray-600">
+                        Detalhes
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
-                <ResultCard
-                  title="Receita Total"
-                  value={formatCurrency(simulationResult.receitaTotal)}
-                  subtitle={`${formatCurrency(
-                    precoSessao
-                  )} × ${numeroSessoes} sessões`}
-                  icon={DollarSign}
-                  variant="green"
-                />
+                {/* Linhas da tabela */}
+                <div className="divide-y divide-careflow-gray-100">
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-red w-10 h-10 flex items-center justify-center">
+                            <Package className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Custo Total por Sessão
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(
+                            simulationResult.custoVariavelPorSessao
+                          )}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          Insumos + Profissional
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
-                <ResultCard
-                  title="Custo Total Variável"
-                  value={formatCurrency(simulationResult.custoTotalVariavel)}
-                  subtitle={`${formatCurrency(
-                    simulationResult.custoVariavelPorSessao
-                  )} × ${numeroSessoes} sessões`}
-                  icon={TrendingDown}
-                  variant="orange-dark"
-                />
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-red w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <Package className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Custo Total por Sessão
+                        </div>
+                        <div className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(
+                            simulationResult.custoVariavelPorSessao
+                          )}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          Insumos + Profissional
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                <ResultCard
-                  title="Margem de Contribuição"
-                  value={formatCurrency(simulationResult.margemContribuicao)}
-                  subtitle="Lucro total do procedimento"
-                  icon={Target}
-                  variant="blue"
-                  trend="up"
-                />
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-green w-10 h-10 flex items-center justify-center">
+                            <DollarSign className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Receita Total
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.receitaTotal)}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          {formatCurrency(precoSessao)} × {numeroSessoes}{" "}
+                          sessões
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
-                <ResultCard
-                  title="Margem por Sessão"
-                  value={formatCurrency(simulationResult.margemPorSessao)}
-                  subtitle="Lucro líquido unitário"
-                  icon={Percent}
-                  variant="purple"
-                />
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-green w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <DollarSign className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Receita Total
+                        </div>
+                        <div className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.receitaTotal)}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          {formatCurrency(precoSessao)} × {numeroSessoes}{" "}
+                          sessões
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-                <ResultCard
-                  title="Margem de Contribuição %"
-                  value={formatPercentage(simulationResult.margemPercentual)}
-                  subtitle="Percentual de lucro por sessão"
-                  icon={TrendingUp}
-                  variant="green"
-                />
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-orange-dark w-10 h-10 flex items-center justify-center">
+                            <TrendingDown className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Custo Total Variável
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.custoTotalVariavel)}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          {formatCurrency(
+                            simulationResult.custoVariavelPorSessao
+                          )}{" "}
+                          × {numeroSessoes} sessões
+                        </span>
+                      </div>
+                    </div>
+                  </div>
 
-                <ResultCard
-                  title="Lucro por Hora"
-                  value={formatCurrency(simulationResult.lucroPorHora)}
-                  subtitle={`${simulationResult.tempoTotalHoras.toFixed(
-                    1
-                  )}h de trabalho total`}
-                  icon={Clock}
-                  variant="orange"
-                />
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-orange-dark w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <TrendingDown className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Custo Total Variável
+                        </div>
+                        <div className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.custoTotalVariavel)}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          {formatCurrency(
+                            simulationResult.custoVariavelPorSessao
+                          )}{" "}
+                          × {numeroSessoes} sessões
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-blue w-10 h-10 flex items-center justify-center">
+                            <Target className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Margem de Contribuição
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-green-600">
+                          {formatCurrency(simulationResult.margemContribuicao)}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          Lucro total do procedimento
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-blue w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <Target className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Margem de Contribuição
+                        </div>
+                        <div className="text-sm font-bold text-green-600">
+                          {formatCurrency(simulationResult.margemContribuicao)}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          Lucro total do procedimento
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-purple w-10 h-10 flex items-center justify-center">
+                            <Percent className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Margem por Sessão
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.margemPorSessao)}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          Lucro líquido unitário
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-purple w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <Percent className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Margem por Sessão
+                        </div>
+                        <div className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.margemPorSessao)}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          Lucro líquido unitário
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-green w-10 h-10 flex items-center justify-center">
+                            <TrendingUp className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Margem de Contribuição %
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-careflow-gray-900">
+                          {formatPercentage(simulationResult.margemPercentual)}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          Percentual de lucro por sessão
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-green w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <TrendingUp className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Margem de Contribuição %
+                        </div>
+                        <div className="text-sm font-bold text-careflow-gray-900">
+                          {formatPercentage(simulationResult.margemPercentual)}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          Percentual de lucro por sessão
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop */}
+                  <div className="hidden sm:block px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="grid grid-cols-12 gap-4 items-center">
+                      <div className="col-span-5">
+                        <div className="flex items-center gap-3">
+                          <div className="icon-box-orange w-10 h-10 flex items-center justify-center">
+                            <Clock className="w-5 h-5" />
+                          </div>
+                          <span className="text-sm font-medium text-careflow-gray-900">
+                            Lucro por Hora
+                          </span>
+                        </div>
+                      </div>
+                      <div className="col-span-4">
+                        <span className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.lucroPorHora)}
+                        </span>
+                      </div>
+                      <div className="col-span-3">
+                        <span className="text-xs text-careflow-gray-600">
+                          {simulationResult.tempoTotalHoras.toFixed(1)}h de
+                          trabalho total
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mobile */}
+                  <div className="sm:hidden px-4 py-3 hover:bg-careflow-gray-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="icon-box-orange w-10 h-10 flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-sm font-medium text-careflow-gray-900">
+                          Lucro por Hora
+                        </div>
+                        <div className="text-sm font-bold text-careflow-gray-900">
+                          {formatCurrency(simulationResult.lucroPorHora)}
+                        </div>
+                        <div className="text-xs text-careflow-gray-600">
+                          {simulationResult.tempoTotalHoras.toFixed(1)}h de
+                          trabalho total
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ) : (

@@ -6,7 +6,14 @@ interface ResultCardProps {
   value: string;
   subtitle?: string;
   icon: LucideIcon;
-  variant?: "blue" | "purple" | "orange" | "green" | "gray" | "red" | "orange-dark";
+  variant?:
+    | "blue"
+    | "purple"
+    | "orange"
+    | "green"
+    | "gray"
+    | "red"
+    | "orange-dark";
   trend?: "up" | "down" | "neutral";
 }
 
@@ -69,24 +76,24 @@ export function ResultCard({
 
   return (
     <div
-      className={`p-4 sm:p-6 rounded-lg border shadow-card hover:shadow-careflow transition-all duration-300 ${getCardClasses()}`}
+      className={`p-3 sm:p-4 rounded-lg border shadow-card hover:shadow-careflow transition-all duration-300 ${getCardClasses()}`}
     >
-      <div className="flex items-start justify-between">
+      <div className="flex items-center justify-between">
         <div className="flex-1 min-w-0">
           <h3 className="text-xs sm:text-sm font-medium text-careflow-gray-600 mb-1">
             {title}
           </h3>
-          <p className="text-lg sm:text-xl lg:text-2xl font-bold text-careflow-gray-900 mb-1 break-words">
+          <p className="text-base sm:text-lg font-bold text-careflow-gray-900 mb-1 break-words">
             {value}
           </p>
           {subtitle && (
-            <p className={`text-xs sm:text-sm font-medium ${getTrendColor()} break-words`}>
+            <p className={`text-xs font-medium ${getTrendColor()} break-words`}>
               {subtitle}
             </p>
           )}
         </div>
         <div className={`${getIconClasses()} flex-shrink-0 ml-3`}>
-          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+          <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
         </div>
       </div>
     </div>
