@@ -18,11 +18,23 @@ export function ProcedureSelector({ procedures, selectedProcedure, onProcedureSe
 
   // Filtrar procedimentos baseado no termo de busca
   const filteredProcedures = useMemo(() => {
-    if (!searchTerm.trim()) return procedures.slice(0, 5); // Mostrar apenas os primeiros 5 quando não há busca
+    let filtered = procedures;
     
-    return procedures.filter(procedure =>
-      procedure.nome.toLowerCase().includes(searchTerm.toLowerCase())
-    ).slice(0, 8); // Limitar a 8 resultados no dropdown
+    if (searchTerm.trim()) {
+      filtered = procedures.filter(procedure =>
+        procedure.nome.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    // Ordenar por ordem alfabética do nome
+    filtered = filtered.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+    
+    // Limitar resultados
+    if (!searchTerm.trim()) {
+      return filtered.slice(0, 5); // Mostrar apenas os primeiros 5 quando não há busca
+    }
+    
+    return filtered.slice(0, 8); // Limitar a 8 resultados no dropdown
   }, [procedures, searchTerm]);
 
   // Mostrar dropdown quando há busca ou quando o campo está focado

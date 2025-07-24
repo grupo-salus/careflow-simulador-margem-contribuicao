@@ -1,6 +1,216 @@
 [
   {
-    "id": "pernas-laser",
+    "id": 1,
+    "nome": "Alongamento de Unhas",
+    "precoSugerido": 85,
+    "numeroSessoes": 1,
+    "tempoSessaoMin": 90,
+    "insumos": [
+      {
+        "nome": "Gel para alongamento",
+        "valor": 12.5
+      },
+      {
+        "nome": "Tips",
+        "valor": 3.2
+      },
+      {
+        "nome": "Primer",
+        "valor": 4.8
+      },
+      {
+        "nome": "Base coat",
+        "valor": 3.5
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 2,
+    "nome": "Botox - Rugas Faciais",
+    "precoSugerido": 450,
+    "numeroSessoes": 1,
+    "tempoSessaoMin": 30,
+    "insumos": [
+      {
+        "nome": "Toxina botulínica",
+        "valor": 180
+      },
+      {
+        "nome": "Agulhas descartáveis",
+        "valor": 12
+      },
+      {
+        "nome": "Algodão",
+        "valor": 0.3
+      },
+      {
+        "nome": "Álcool 70%",
+        "valor": 0.5
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 3,
+    "nome": "Carboxiterapia",
+    "precoSugerido": 120,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 30,
+    "insumos": [
+      {
+        "nome": "CO2 medicinal",
+        "valor": 8.5
+      },
+      {
+        "nome": "Agulhas descartáveis",
+        "valor": 6
+      },
+      {
+        "nome": "Algodão",
+        "valor": 0.4
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 4,
+    "nome": "Clareamento Facial",
+    "precoSugerido": 140,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 45,
+    "insumos": [
+      {
+        "nome": "Sérum clareador",
+        "valor": 12.5
+      },
+      {
+        "nome": "Máscara clareadora",
+        "valor": 8.8
+      },
+      {
+        "nome": "Protetor solar",
+        "valor": 9.5
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 5,
+    "nome": "Coloração Capilar",
+    "precoSugerido": 120,
+    "numeroSessoes": 1,
+    "tempoSessaoMin": 120,
+    "insumos": [
+      {
+        "nome": "Tinta profissional",
+        "valor": 25
+      },
+      {
+        "nome": "Descolorante",
+        "valor": 18.5
+      },
+      {
+        "nome": "Óxido",
+        "valor": 8.2
+      },
+      {
+        "nome": "Shampoo",
+        "valor": 6.8
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 6,
+    "nome": "Criolipólise - Barriga",
+    "precoSugerido": 420,
+    "numeroSessoes": 3,
+    "tempoSessaoMin": 75,
+    "insumos": [
+      {
+        "nome": "Placa de crioproteção",
+        "valor": 12
+      },
+      {
+        "nome": "Pano higiênico",
+        "valor": 2.5
+      },
+      {
+        "nome": "Luva",
+        "valor": 1.5
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 7,
+    "nome": "Criolipólise - Flancos",
+    "precoSugerido": 350,
+    "numeroSessoes": 4,
+    "tempoSessaoMin": 60,
+    "insumos": [
+      {
+        "nome": "Placa de crioproteção",
+        "valor": 8
+      },
+      {
+        "nome": "Pano higiênico",
+        "valor": 1.5
+      },
+      {
+        "nome": "Luva",
+        "valor": 1
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 8,
+    "nome": "Depilação a Laser - Axilas",
+    "precoSugerido": 80,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 20,
+    "insumos": [
+      {
+        "nome": "Gel de contato",
+        "valor": 0.8
+      },
+      {
+        "nome": "Luva descartável",
+        "valor": 0.6
+      },
+      {
+        "nome": "Papel toalha",
+        "valor": 0.3
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 9,
+    "nome": "Depilação a Laser - Buco",
+    "precoSugerido": 60,
+    "numeroSessoes": 8,
+    "tempoSessaoMin": 15,
+    "insumos": [
+      {
+        "nome": "Gel de contato",
+        "valor": 0.6
+      },
+      {
+        "nome": "Luva descartável",
+        "valor": 0.5
+      },
+      {
+        "nome": "Papel toalha",
+        "valor": 0.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 10,
     "nome": "Depilação a Laser - Pernas",
     "precoSugerido": 143,
     "numeroSessoes": 2,
@@ -42,199 +252,7 @@
     ]
   },
   {
-    "id": "criolipolise-flancos",
-    "nome": "Criolipólise - Flancos",
-    "precoSugerido": 350,
-    "numeroSessoes": 4,
-    "tempoSessaoMin": 60,
-    "insumos": [
-      {
-        "nome": "Placa de crioproteção",
-        "valor": 8
-      },
-      {
-        "nome": "Pano higiênico",
-        "valor": 1.5
-      },
-      {
-        "nome": "Luva",
-        "valor": 1
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "radiofrequencia-facial",
-    "nome": "Radiofrequência Facial",
-    "precoSugerido": 180,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 50,
-    "insumos": [
-      {
-        "nome": "Gel condutor",
-        "valor": 2.5
-      },
-      {
-        "nome": "Luva descartável",
-        "valor": 0.8
-      },
-      {
-        "nome": "Lenço demaquilante",
-        "valor": 1.2
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "massagem-modeladora",
-    "nome": "Massagem Modeladora",
-    "precoSugerido": 85,
-    "numeroSessoes": 10,
-    "tempoSessaoMin": 40,
-    "insumos": [
-      {
-        "nome": "Óleo de massagem",
-        "valor": 3.5
-      },
-      {
-        "nome": "Papel toalha",
-        "valor": 0.8
-      },
-      {
-        "nome": "Luva",
-        "valor": 0.6
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "microagulhamento",
-    "nome": "Microagulhamento Facial",
-    "precoSugerido": 200,
-    "numeroSessoes": 4,
-    "tempoSessaoMin": 55,
-    "insumos": [
-      {
-        "nome": "Agulhas descartáveis",
-        "valor": 15
-      },
-      {
-        "nome": "Sérum vitamina C",
-        "valor": 8.5
-      },
-      {
-        "nome": "Máscara calmante",
-        "valor": 4.2
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "botox-facial",
-    "nome": "Botox - Rugas Faciais",
-    "precoSugerido": 450,
-    "numeroSessoes": 1,
-    "tempoSessaoMin": 30,
-    "insumos": [
-      {
-        "nome": "Toxina botulínica",
-        "valor": 180
-      },
-      {
-        "nome": "Agulhas descartáveis",
-        "valor": 12
-      },
-      {
-        "nome": "Algodão",
-        "valor": 0.3
-      },
-      {
-        "nome": "Álcool 70%",
-        "valor": 0.5
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "preenchimento-labios",
-    "nome": "Preenchimento Labial",
-    "precoSugerido": 380,
-    "numeroSessoes": 1,
-    "tempoSessaoMin": 45,
-    "insumos": [
-      {
-        "nome": "Ácido hialurônico",
-        "valor": 120
-      },
-      {
-        "nome": "Agulhas descartáveis",
-        "valor": 15
-      },
-      {
-        "nome": "Anestésico tópico",
-        "valor": 8.5
-      },
-      {
-        "nome": "Algodão",
-        "valor": 0.3
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "limpeza-pele",
-    "nome": "Limpeza de Pele Profunda",
-    "precoSugerido": 95,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 60,
-    "insumos": [
-      {
-        "nome": "Sabonete facial",
-        "valor": 2.8
-      },
-      {
-        "nome": "Tônico adstringente",
-        "valor": 3.2
-      },
-      {
-        "nome": "Máscara de argila",
-        "valor": 4.5
-      },
-      {
-        "nome": "Protetor solar",
-        "valor": 6.8
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "peeling-quimico",
-    "nome": "Peeling Químico",
-    "precoSugerido": 150,
-    "numeroSessoes": 4,
-    "tempoSessaoMin": 40,
-    "insumos": [
-      {
-        "nome": "Ácido glicólico",
-        "valor": 12
-      },
-      {
-        "nome": "Neutralizador",
-        "valor": 5.5
-      },
-      {
-        "nome": "Protetor solar",
-        "valor": 8.2
-      },
-      {
-        "nome": "Máscara calmante",
-        "valor": 4.8
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "drenagem-linfatica",
+    "id": 11,
     "nome": "Drenagem Linfática",
     "precoSugerido": 75,
     "numeroSessoes": 8,
@@ -256,51 +274,55 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "ultrassom-facial",
-    "nome": "Ultrassom Facial",
+    "id": 12,
+    "nome": "Endermologia",
     "precoSugerido": 110,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 35,
+    "numeroSessoes": 12,
+    "tempoSessaoMin": 50,
     "insumos": [
       {
-        "nome": "Gel condutor",
-        "valor": 3.5
+        "nome": "Óleo de massagem",
+        "valor": 4.5
       },
       {
-        "nome": "Sérum hidratante",
-        "valor": 5.8
+        "nome": "Toalha descartável",
+        "valor": 2
       },
       {
-        "nome": "Protetor solar",
-        "valor": 6.2
+        "nome": "Papel toalha",
+        "valor": 0.8
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "carboxiterapia",
-    "nome": "Carboxiterapia",
-    "precoSugerido": 120,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 30,
+    "id": 13,
+    "nome": "Escova Progressiva",
+    "precoSugerido": 280,
+    "numeroSessoes": 1,
+    "tempoSessaoMin": 180,
     "insumos": [
       {
-        "nome": "CO2 medicinal",
-        "valor": 8.5
+        "nome": "Produto progressivo",
+        "valor": 45
       },
       {
-        "nome": "Agulhas descartáveis",
-        "valor": 6
+        "nome": "Shampoo específico",
+        "valor": 15.8
+      },
+             {
+        "nome": "Máscara reparadora",
+        "valor": 18.5
       },
       {
-        "nome": "Algodão",
-        "valor": 0.4
+        "nome": "Luva",
+        "valor": 1.2
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "hidratação-capilar",
+    "id": 14,
     "nome": "Hidratação Capilar Profunda",
     "precoSugerido": 65,
     "numeroSessoes": 4,
@@ -326,59 +348,55 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "escova-progressiva",
-    "nome": "Escova Progressiva",
-    "precoSugerido": 280,
-    "numeroSessoes": 1,
-    "tempoSessaoMin": 180,
+    "id": 15,
+    "nome": "Hidratação Facial Profunda",
+    "precoSugerido": 85,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 50,
     "insumos": [
       {
-        "nome": "Produto progressivo",
-        "valor": 45
+        "nome": "Máscara hidratante",
+        "valor": 8.5
       },
       {
-        "nome": "Shampoo específico",
-        "valor": 15.8
+        "nome": "Sérum hidratante",
+        "valor": 6.2
       },
       {
-        "nome": "Máscara reparadora",
-        "valor": 18.5
-      },
-      {
-        "nome": "Luva",
-        "valor": 1.2
+        "nome": "Protetor solar",
+        "valor": 7.5
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "coloração-capilar",
-    "nome": "Coloração Capilar",
-    "precoSugerido": 120,
-    "numeroSessoes": 1,
-    "tempoSessaoMin": 120,
+    "id": 16,
+    "nome": "Limpeza de Pele Profunda",
+    "precoSugerido": 95,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 60,
     "insumos": [
       {
-        "nome": "Tinta profissional",
-        "valor": 25
+        "nome": "Sabonete facial",
+        "valor": 2.8
       },
       {
-        "nome": "Descolorante",
-        "valor": 18.5
+        "nome": "Tônico adstringente",
+        "valor": 3.2
       },
       {
-        "nome": "Óxido",
-        "valor": 8.2
+        "nome": "Máscara de argila",
+        "valor": 4.5
       },
       {
-        "nome": "Shampoo",
+        "nome": "Protetor solar",
         "valor": 6.8
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "manicure-pedicure",
+    "id": 17,
     "nome": "Manicure e Pedicure",
     "precoSugerido": 45,
     "numeroSessoes": 1,
@@ -404,187 +422,29 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "alongamento-unhas",
-    "nome": "Alongamento de Unhas",
+    "id": 18,
+    "nome": "Massagem Modeladora",
     "precoSugerido": 85,
-    "numeroSessoes": 1,
-    "tempoSessaoMin": 90,
-    "insumos": [
-      {
-        "nome": "Gel para alongamento",
-        "valor": 12.5
-      },
-      {
-        "nome": "Tips",
-        "valor": 3.2
-      },
-      {
-        "nome": "Primer",
-        "valor": 4.8
-      },
-      {
-        "nome": "Base coat",
-        "valor": 3.5
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "depilacao-axilas",
-    "nome": "Depilação a Laser - Axilas",
-    "precoSugerido": 80,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 20,
-    "insumos": [
-      {
-        "nome": "Gel de contato",
-        "valor": 0.8
-      },
-      {
-        "nome": "Luva descartável",
-        "valor": 0.6
-      },
-      {
-        "nome": "Papel toalha",
-        "valor": 0.3
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "depilacao-buco",
-    "nome": "Depilação a Laser - Buco",
-    "precoSugerido": 60,
-    "numeroSessoes": 8,
-    "tempoSessaoMin": 15,
-    "insumos": [
-      {
-        "nome": "Gel de contato",
-        "valor": 0.6
-      },
-      {
-        "nome": "Luva descartável",
-        "valor": 0.5
-      },
-      {
-        "nome": "Papel toalha",
-        "valor": 0.2
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "criolipolise-barriga",
-    "nome": "Criolipólise - Barriga",
-    "precoSugerido": 420,
-    "numeroSessoes": 3,
-    "tempoSessaoMin": 75,
-    "insumos": [
-      {
-        "nome": "Placa de crioproteção",
-        "valor": 12
-      },
-      {
-        "nome": "Pano higiênico",
-        "valor": 2.5
-      },
-      {
-        "nome": "Luva",
-        "valor": 1.5
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "radiofrequencia-corporal",
-    "nome": "Radiofrequência Corporal",
-    "precoSugerido": 140,
-    "numeroSessoes": 8,
-    "tempoSessaoMin": 45,
-    "insumos": [
-      {
-        "nome": "Gel condutor",
-        "valor": 3.2
-      },
-      {
-        "nome": "Luva descartável",
-        "valor": 0.8
-      },
-      {
-        "nome": "Toalha",
-        "valor": 1.2
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "ultrassom-corporal",
-    "nome": "Ultrassom Corporal",
-    "precoSugerido": 95,
     "numeroSessoes": 10,
     "tempoSessaoMin": 40,
     "insumos": [
       {
-        "nome": "Gel condutor",
-        "valor": 2.8
-      },
-      {
         "nome": "Óleo de massagem",
         "valor": 3.5
       },
       {
-        "nome": "Toalha",
-        "valor": 1
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "endermologia",
-    "nome": "Endermologia",
-    "precoSugerido": 110,
-    "numeroSessoes": 12,
-    "tempoSessaoMin": 50,
-    "insumos": [
-      {
-        "nome": "Óleo de massagem",
-        "valor": 4.5
-      },
-      {
-        "nome": "Toalha descartável",
-        "valor": 2
-      },
-      {
         "nome": "Papel toalha",
         "valor": 0.8
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "vacumterapia",
-    "nome": "Vacumterapia",
-    "precoSugerido": 75,
-    "numeroSessoes": 8,
-    "tempoSessaoMin": 35,
-    "insumos": [
-      {
-        "nome": "Óleo de massagem",
-        "valor": 3.8
       },
       {
-        "nome": "Toalha",
-        "valor": 1.5
-      },
-      {
-        "nome": "Papel toalha",
+        "nome": "Luva",
         "valor": 0.6
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "microagulhamento-corporal",
+    "id": 19,
     "nome": "Microagulhamento Corporal",
     "precoSugerido": 180,
     "numeroSessoes": 6,
@@ -606,7 +466,29 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "peeling-diamante",
+    "id": 20,
+    "nome": "Microagulhamento Facial",
+    "precoSugerido": 200,
+    "numeroSessoes": 4,
+    "tempoSessaoMin": 55,
+    "insumos": [
+      {
+        "nome": "Agulhas descartáveis",
+        "valor": 15
+      },
+      {
+        "nome": "Sérum vitamina C",
+        "valor": 8.5
+      },
+      {
+        "nome": "Máscara calmante",
+        "valor": 4.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 21,
     "nome": "Peeling de Diamante",
     "precoSugerido": 130,
     "numeroSessoes": 4,
@@ -628,29 +510,103 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "hidratação-facial",
-    "nome": "Hidratação Facial Profunda",
-    "precoSugerido": 85,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 50,
+    "id": 22,
+    "nome": "Peeling Químico",
+    "precoSugerido": 150,
+    "numeroSessoes": 4,
+    "tempoSessaoMin": 40,
     "insumos": [
       {
-        "nome": "Máscara hidratante",
-        "valor": 8.5
+        "nome": "Ácido glicólico",
+        "valor": 12
       },
       {
-        "nome": "Sérum hidratante",
-        "valor": 6.2
+        "nome": "Neutralizador",
+        "valor": 5.5
       },
       {
         "nome": "Protetor solar",
-        "valor": 7.5
+        "valor": 8.2
+      },
+      {
+        "nome": "Máscara calmante",
+        "valor": 4.8
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "rejuvenescimento-facial",
+    "id": 23,
+    "nome": "Preenchimento Labial",
+    "precoSugerido": 380,
+    "numeroSessoes": 1,
+    "tempoSessaoMin": 45,
+    "insumos": [
+      {
+        "nome": "Ácido hialurônico",
+        "valor": 120
+      },
+      {
+        "nome": "Agulhas descartáveis",
+        "valor": 15
+      },
+      {
+        "nome": "Anestésico tópico",
+        "valor": 8.5
+      },
+      {
+        "nome": "Algodão",
+        "valor": 0.3
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 24,
+    "nome": "Radiofrequência Corporal",
+    "precoSugerido": 140,
+    "numeroSessoes": 8,
+    "tempoSessaoMin": 45,
+    "insumos": [
+      {
+        "nome": "Gel condutor",
+        "valor": 3.2
+      },
+      {
+        "nome": "Luva descartável",
+        "valor": 0.8
+      },
+      {
+        "nome": "Toalha",
+        "valor": 1.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 25,
+    "nome": "Radiofrequência Facial",
+    "precoSugerido": 180,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 50,
+    "insumos": [
+      {
+        "nome": "Gel condutor",
+        "valor": 2.5
+      },
+      {
+        "nome": "Luva descartável",
+        "valor": 0.8
+      },
+      {
+        "nome": "Lenço demaquilante",
+        "valor": 1.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 26,
     "nome": "Rejuvenescimento Facial",
     "precoSugerido": 220,
     "numeroSessoes": 8,
@@ -672,7 +628,7 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-acne",
+    "id": 27,
     "nome": "Tratamento para Acne",
     "precoSugerido": 160,
     "numeroSessoes": 8,
@@ -694,95 +650,7 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "clareamento-facial",
-    "nome": "Clareamento Facial",
-    "precoSugerido": 140,
-    "numeroSessoes": 6,
-    "tempoSessaoMin": 45,
-    "insumos": [
-      {
-        "nome": "Sérum clareador",
-        "valor": 12.5
-      },
-      {
-        "nome": "Máscara clareadora",
-        "valor": 8.8
-      },
-      {
-        "nome": "Protetor solar",
-        "valor": 9.5
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "tratamento-rosacea",
-    "nome": "Tratamento para Rosácea",
-    "precoSugerido": 175,
-    "numeroSessoes": 10,
-    "tempoSessaoMin": 40,
-    "insumos": [
-      {
-        "nome": "Sérum calmante",
-        "valor": 10.5
-      },
-      {
-        "nome": "Máscara calmante",
-        "valor": 7.8
-      },
-      {
-        "nome": "Protetor solar",
-        "valor": 8.2
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "tratamento-melasma",
-    "nome": "Tratamento para Melasma",
-    "precoSugerido": 190,
-    "numeroSessoes": 12,
-    "tempoSessaoMin": 50,
-    "insumos": [
-      {
-        "nome": "Sérum clareador",
-        "valor": 15.8
-      },
-      {
-        "nome": "Máscara clareadora",
-        "valor": 12.5
-      },
-      {
-        "nome": "Protetor solar",
-        "valor": 11.2
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "tratamento-estrias",
-    "nome": "Tratamento para Estrias",
-    "precoSugerido": 200,
-    "numeroSessoes": 15,
-    "tempoSessaoMin": 60,
-    "insumos": [
-      {
-        "nome": "Sérum regenerador",
-        "valor": 18.5
-      },
-      {
-        "nome": "Óleo de rosa mosqueta",
-        "valor": 12.8
-      },
-      {
-        "nome": "Máscara regeneradora",
-        "valor": 9.5
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "tratamento-celulite",
+    "id": 28,
     "nome": "Tratamento para Celulite",
     "precoSugerido": 165,
     "numeroSessoes": 12,
@@ -804,7 +672,29 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-flacidez",
+    "id": 29,
+    "nome": "Tratamento para Estrias",
+    "precoSugerido": 200,
+    "numeroSessoes": 15,
+    "tempoSessaoMin": 60,
+    "insumos": [
+      {
+        "nome": "Sérum regenerador",
+        "valor": 18.5
+      },
+      {
+        "nome": "Óleo de rosa mosqueta",
+        "valor": 12.8
+      },
+      {
+        "nome": "Máscara regeneradora",
+        "valor": 9.5
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 30,
     "nome": "Tratamento para Flacidez",
     "precoSugerido": 180,
     "numeroSessoes": 10,
@@ -826,7 +716,7 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-gordura-localizada",
+    "id": 31,
     "nome": "Tratamento para Gordura Localizada",
     "precoSugerido": 220,
     "numeroSessoes": 8,
@@ -848,29 +738,7 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-rugas",
-    "nome": "Tratamento para Rugas",
-    "precoSugerido": 240,
-    "numeroSessoes": 10,
-    "tempoSessaoMin": 60,
-    "insumos": [
-      {
-        "nome": "Sérum antirrugas",
-        "valor": 18.5
-      },
-      {
-        "nome": "Máscara lifting",
-        "valor": 14.2
-      },
-      {
-        "nome": "Protetor solar",
-        "valor": 10.8
-      }
-    ],
-    "custoProfissionalPorSessao": 18.78
-  },
-  {
-    "id": "tratamento-manchas",
+    "id": 32,
     "nome": "Tratamento para Manchas",
     "precoSugerido": 195,
     "numeroSessoes": 12,
@@ -892,29 +760,29 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-poros-dilatados",
-    "nome": "Tratamento para Poros Dilatados",
-    "precoSugerido": 155,
-    "numeroSessoes": 8,
-    "tempoSessaoMin": 45,
+    "id": 33,
+    "nome": "Tratamento para Melasma",
+    "precoSugerido": 190,
+    "numeroSessoes": 12,
+    "tempoSessaoMin": 50,
     "insumos": [
       {
-        "nome": "Sérum adstringente",
-        "valor": 11.5
+        "nome": "Sérum clareador",
+        "valor": 15.8
       },
       {
-        "nome": "Máscara de argila",
-        "valor": 8.8
+        "nome": "Máscara clareadora",
+        "valor": 12.5
       },
       {
         "nome": "Protetor solar",
-        "valor": 9.2
+        "valor": 11.2
       }
     ],
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-pele-oleosa",
+    "id": 34,
     "nome": "Tratamento para Pele Oleosa",
     "precoSugerido": 135,
     "numeroSessoes": 6,
@@ -936,7 +804,7 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-pele-seca",
+    "id": 35,
     "nome": "Tratamento para Pele Seca",
     "precoSugerido": 145,
     "numeroSessoes": 8,
@@ -958,7 +826,7 @@
     "custoProfissionalPorSessao": 18.78
   },
   {
-    "id": "tratamento-pele-sensivel",
+    "id": 36,
     "nome": "Tratamento para Pele Sensível",
     "precoSugerido": 165,
     "numeroSessoes": 10,
@@ -975,6 +843,138 @@
       {
         "nome": "Protetor solar",
         "valor": 11.5
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 37,
+    "nome": "Tratamento para Poros Dilatados",
+    "precoSugerido": 155,
+    "numeroSessoes": 8,
+    "tempoSessaoMin": 45,
+    "insumos": [
+      {
+        "nome": "Sérum adstringente",
+        "valor": 11.5
+      },
+      {
+        "nome": "Máscara de argila",
+        "valor": 8.8
+      },
+      {
+        "nome": "Protetor solar",
+        "valor": 9.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 38,
+    "nome": "Tratamento para Rosácea",
+    "precoSugerido": 175,
+    "numeroSessoes": 10,
+    "tempoSessaoMin": 40,
+    "insumos": [
+      {
+        "nome": "Sérum calmante",
+        "valor": 10.5
+      },
+      {
+        "nome": "Máscara calmante",
+        "valor": 7.8
+      },
+      {
+        "nome": "Protetor solar",
+        "valor": 8.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 39,
+    "nome": "Tratamento para Rugas",
+    "precoSugerido": 240,
+    "numeroSessoes": 10,
+    "tempoSessaoMin": 60,
+    "insumos": [
+      {
+        "nome": "Sérum antirrugas",
+        "valor": 18.5
+      },
+      {
+        "nome": "Máscara lifting",
+        "valor": 14.2
+      },
+      {
+        "nome": "Protetor solar",
+        "valor": 10.8
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 40,
+    "nome": "Ultrassom Corporal",
+    "precoSugerido": 95,
+    "numeroSessoes": 10,
+    "tempoSessaoMin": 40,
+    "insumos": [
+      {
+        "nome": "Gel condutor",
+        "valor": 2.8
+      },
+      {
+        "nome": "Óleo de massagem",
+        "valor": 3.5
+      },
+      {
+        "nome": "Toalha",
+        "valor": 1
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 41,
+    "nome": "Ultrassom Facial",
+    "precoSugerido": 110,
+    "numeroSessoes": 6,
+    "tempoSessaoMin": 35,
+    "insumos": [
+      {
+        "nome": "Gel condutor",
+        "valor": 3.5
+      },
+      {
+        "nome": "Sérum hidratante",
+        "valor": 5.8
+      },
+      {
+        "nome": "Protetor solar",
+        "valor": 6.2
+      }
+    ],
+    "custoProfissionalPorSessao": 18.78
+  },
+  {
+    "id": 42,
+    "nome": "Vacumterapia",
+    "precoSugerido": 75,
+    "numeroSessoes": 8,
+    "tempoSessaoMin": 35,
+    "insumos": [
+      {
+        "nome": "Óleo de massagem",
+        "valor": 3.8
+      },
+      {
+        "nome": "Toalha",
+        "valor": 1.5
+      },
+      {
+        "nome": "Papel toalha",
+        "valor": 0.6
       }
     ],
     "custoProfissionalPorSessao": 18.78

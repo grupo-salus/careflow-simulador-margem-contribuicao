@@ -24,13 +24,18 @@ export function ProcedureSelectionModal({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  // Filtrar procedimentos baseado no termo de busca
+  // Filtrar e ordenar procedimentos baseado no termo de busca
   const filteredProcedures = useMemo(() => {
-    if (!searchTerm.trim()) return procedures;
-
-    return procedures.filter((procedure) =>
-      procedure.nome.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    let filtered = procedures;
+    
+    if (searchTerm.trim()) {
+      filtered = procedures.filter((procedure) =>
+        procedure.nome.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    // Ordenar por ordem alfabética do nome
+    return filtered.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
   }, [procedures, searchTerm]);
 
   // Calcular paginação
