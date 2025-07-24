@@ -52,7 +52,7 @@ export function InputField({
             placeholder={placeholder}
             min={min}
             step={getStepValue()}
-            className={`w-full py-2 sm:py-3 bg-white rounded-lg focus:ring-2 focus:ring-careflow-primary focus:outline-none transition-all duration-200 text-sm sm:text-base ${
+            className={`w-full py-2 sm:py-3 bg-white rounded-lg border border-transparent focus:border-careflow-gray-400 focus:outline-none transition-all duration-200 text-sm sm:text-base ${
               prefix ? "pl-7 sm:pl-8" : "px-3 sm:px-4"
             } ${suffix ? "pr-12 sm:pr-16" : "pr-3 sm:pr-4"}`}
           />

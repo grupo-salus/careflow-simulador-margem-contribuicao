@@ -104,12 +104,12 @@ export function ProcedureSelector({
             {showDropdown &&
               searchTerm.trim() &&
               filteredProcedures.length > 0 && (
-                <div className="absolute z-10 w-full mt-1 bg-white border border-careflow-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+                <div className="absolute z-10 w-full mt-1 bg-white rounded-lg shadow-lg max-h-60 overflow-y-auto">
                   {filteredProcedures.map((procedure) => (
                     <div
                       key={procedure.id}
                       onClick={() => handleProcedureSelect(procedure)}
-                      className="px-3 sm:px-4 py-2 sm:py-3 hover:bg-careflow-gray-50 cursor-pointer border-b border-careflow-gray-100 last:border-b-0"
+                      className="px-3 sm:px-4 py-2 sm:py-3 hover:bg-careflow-gray-50 cursor-pointer last:border-b-0"
                     >
                       <div className="font-medium text-careflow-gray-900 text-sm sm:text-base">
                         {procedure.nome}
