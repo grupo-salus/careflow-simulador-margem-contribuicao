@@ -91,6 +91,9 @@ export function ProcedureSelectionModal({
                     Tempo/Sessão
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-careflow-gray-700 text-sm">
+                    Custo Profissional
+                  </th>
+                  <th className="text-left py-3 px-4 font-semibold text-careflow-gray-700 text-sm">
                     Custo/Sessão
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-careflow-gray-700 text-sm">
@@ -104,7 +107,8 @@ export function ProcedureSelectionModal({
                     (total, insumo) => total + insumo.valor,
                     0
                   );
-                  const custoTotalPorSessao = custoTotalInsumos + procedure.custoProfissionalPorSessao;
+                  const custoTotalPorSessao =
+                    custoTotalInsumos + procedure.custoProfissionalPorSessao;
                   const isSelected = selectedProcedure?.id === procedure.id;
 
                   return (
@@ -140,6 +144,9 @@ export function ProcedureSelectionModal({
                       </td>
                       <td className="py-3 px-4 text-sm text-careflow-gray-700">
                         {procedure.tempoSessaoMin} min
+                      </td>
+                      <td className="py-3 px-4 text-sm text-careflow-gray-700">
+                        {formatCurrency(procedure.custoProfissionalPorSessao)}
                       </td>
                       <td className="py-3 px-4 text-sm text-careflow-gray-700">
                         {formatCurrency(custoTotalPorSessao)}
