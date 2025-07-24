@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react';
-import { Procedure } from '../types';
-import { Modal } from './Modal';
-import { SearchInput } from './SearchInput';
-import { Pagination } from './Pagination';
-import { formatCurrency } from '../services/marginCalculator';
+import React, { useState, useMemo } from "react";
+import { Procedure } from "../types";
+import { Modal } from "./Modal";
+import { SearchInput } from "./SearchInput";
+import { Pagination } from "./Pagination";
+import { formatCurrency } from "../services/marginCalculator";
 
 interface ProcedureSelectionModalProps {
   isOpen: boolean;
@@ -18,17 +18,17 @@ export function ProcedureSelectionModal({
   onClose,
   procedures,
   selectedProcedure,
-  onProcedureSelect
+  onProcedureSelect,
 }: ProcedureSelectionModalProps) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 8;
 
   // Filtrar procedimentos baseado no termo de busca
   const filteredProcedures = useMemo(() => {
     if (!searchTerm.trim()) return procedures;
-    
-    return procedures.filter(procedure =>
+
+    return procedures.filter((procedure) =>
       procedure.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [procedures, searchTerm]);
@@ -54,7 +54,7 @@ export function ProcedureSelectionModal({
       isOpen={isOpen}
       onClose={onClose}
       title="Selecionar Procedimento"
-      size="xl"
+      size="lg"
     >
       <div className="space-y-6">
         {/* Busca */}
@@ -67,11 +67,9 @@ export function ProcedureSelectionModal({
 
         {/* Resultados da busca */}
         <div className="text-sm text-careflow-gray-600 mb-4">
-          {filteredProcedures.length === procedures.length ? (
-            `${procedures.length} procedimentos disponíveis`
-          ) : (
-            `${filteredProcedures.length} de ${procedures.length} procedimentos encontrados`
-          )}
+          {filteredProcedures.length === procedures.length
+            ? `${procedures.length} procedimentos disponíveis`
+            : `${filteredProcedures.length} de ${procedures.length} procedimentos encontrados`}
         </div>
 
         {/* Tabela de procedimentos */}
@@ -102,21 +100,28 @@ export function ProcedureSelectionModal({
               </thead>
               <tbody>
                 {currentProcedures.map((procedure) => {
-                  const custoTotalInsumos = procedure.insumos.reduce((total, insumo) => total + insumo.valor, 0);
+                  const custoTotalInsumos = procedure.insumos.reduce(
+                    (total, insumo) => total + insumo.valor,
+                    0
+                  );
                   const isSelected = selectedProcedure?.id === procedure.id;
-                  
+
                   return (
-                    <tr 
+                    <tr
                       key={procedure.id}
                       className={`border-b border-careflow-gray-100 hover:bg-careflow-gray-50 transition-colors ${
-                        isSelected ? 'bg-careflow-primary bg-opacity-5' : ''
+                        isSelected ? "bg-careflow-primary bg-opacity-5" : ""
                       }`}
                     >
                       <td className="py-3 px-4">
                         <div>
-                          <div className={`font-medium text-sm ${
-                            isSelected ? 'text-careflow-primary' : 'text-careflow-gray-900'
-                          }`}>
+                          <div
+                            className={`font-medium text-sm ${
+                              isSelected
+                                ? "text-careflow-primary"
+                                : "text-careflow-gray-900"
+                            }`}
+                          >
                             {procedure.nome}
                           </div>
                           {isSelected && (
@@ -143,11 +148,11 @@ export function ProcedureSelectionModal({
                           onClick={() => handleProcedureSelect(procedure)}
                           className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${
                             isSelected
-                              ? 'bg-careflow-primary text-white'
-                              : 'bg-careflow-gray-100 text-careflow-gray-700 hover:bg-careflow-gray-200'
+                              ? "bg-careflow-primary text-white"
+                              : "bg-careflow-gray-100 text-careflow-gray-700 hover:bg-careflow-gray-200"
                           }`}
                         >
-                          {isSelected ? 'Selecionado' : 'Selecionar'}
+                          {isSelected ? "Selecionado" : "Selecionar"}
                         </button>
                       </td>
                     </tr>
@@ -159,12 +164,24 @@ export function ProcedureSelectionModal({
         ) : (
           <div className="text-center py-12">
             <div className="text-careflow-gray-400 mb-2">
-              <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              <svg
+                className="w-12 h-12 mx-auto"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
               </svg>
             </div>
             <p className="text-careflow-gray-600">
-              {searchTerm ? 'Nenhum procedimento encontrado para sua busca.' : 'Nenhum procedimento disponível.'}
+              {searchTerm
+                ? "Nenhum procedimento encontrado para sua busca."
+                : "Nenhum procedimento disponível."}
             </p>
           </div>
         )}
@@ -184,4 +201,4 @@ export function ProcedureSelectionModal({
       </div>
     </Modal>
   );
-} 
+}
