@@ -22,7 +22,7 @@ export function SimulationForm({
       <div className="h-full flex flex-col">
         <div className="flex-1 flex items-center justify-center">
           <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-6 text-center w-full max-w-xs mx-auto">
-            <p className="text-careflow-gray-500 text-sm">
+            <p className="text-careflow-gray-500 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
               Selecione um procedimento
             </p>
           </div>
@@ -59,8 +59,10 @@ export function SimulationForm({
 
       <div className="compact-footer">
         <div className="compact-footer-content">
-          <span className="compact-footer-label">Tempo por sessão:</span>
-          <span className="compact-footer-value">
+          <span className="compact-footer-label text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
+            Tempo por sessão:
+          </span>
+          <span className="compact-footer-value text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
             {selectedProcedure.tempoSessaoMin} minutos
           </span>
         </div>

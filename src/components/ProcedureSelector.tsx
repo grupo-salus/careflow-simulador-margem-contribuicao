@@ -107,10 +107,10 @@ export function ProcedureSelector({
                       onClick={() => handleProcedureSelect(procedure)}
                       className="px-3 sm:px-4 py-2 sm:py-3 hover:bg-careflow-gray-50 cursor-pointer last:border-b-0"
                     >
-                      <div className="font-medium text-careflow-gray-900 text-sm sm:text-base">
+                      <div className="font-medium text-careflow-gray-900 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
                         {procedure.nome}
                       </div>
-                      <div className="text-xs sm:text-sm text-careflow-gray-600">
+                      <div className="text-[0.6875rem] sm:text-[0.75rem] lg:text-[0.6875rem] xl:text-[0.75rem] text-careflow-gray-600">
                         {procedure.numeroSessoes} sessões •{" "}
                         {procedure.tempoSessaoMin} min
                       </div>
@@ -121,7 +121,7 @@ export function ProcedureSelector({
                     <div className="px-3 sm:px-4 py-2 sm:py-3 bg-careflow-gray-50 border-t border-careflow-gray-200">
                       <button
                         onClick={() => setIsModalOpen(true)}
-                        className="text-careflow-primary hover:text-careflow-primary-dark font-medium text-xs sm:text-sm"
+                        className="text-careflow-primary hover:text-careflow-primary-dark font-medium text-[0.6875rem] sm:text-[0.75rem] lg:text-[0.6875rem] xl:text-[0.75rem]"
                       >
                         Ver todos os procedimentos ({procedures.length})
                       </button>
@@ -134,7 +134,7 @@ export function ProcedureSelector({
           {/* Botão para abrir modal */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 bg-careflow-gray-50 border border-careflow-gray-300 rounded-lg hover:bg-careflow-gray-100 transition-colors text-careflow-gray-700 text-sm sm:text-base"
+            className="w-full flex items-center justify-center gap-2 px-3 sm:px-4 py-2 sm:py-3 bg-careflow-gray-50 border border-careflow-gray-300 rounded-lg hover:bg-careflow-gray-100 transition-colors text-careflow-gray-700 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]"
           >
             <List className="w-4 h-4" />
             <span className="hidden sm:inline">Ver todos os procedimentos</span>
@@ -145,14 +145,14 @@ export function ProcedureSelector({
 
       {/* Procedimento selecionado no rodapé */}
       {selectedProcedure && (
-        <div className="border-t border-careflow-gray-200 pt-4">
+        <div className="compact-footer">
           <div className="p-3 sm:p-4 bg-careflow-primary bg-opacity-5 border border-careflow-primary border-opacity-20 rounded-lg">
             <div className="flex items-center justify-between">
               <div className="flex-1 min-w-0">
-                <div className="font-medium text-careflow-gray-900 text-sm sm:text-base break-words">
+                <div className="font-medium text-careflow-gray-900 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem] break-words">
                   {selectedProcedure.nome}
                 </div>
-                <div className="text-xs sm:text-sm text-careflow-gray-600">
+                <div className="text-[0.6875rem] sm:text-[0.75rem] lg:text-[0.6875rem] xl:text-[0.75rem] text-careflow-gray-600">
                   {selectedProcedure.numeroSessoes} sessões •{" "}
                   {selectedProcedure.tempoSessaoMin} min/sessão
                 </div>

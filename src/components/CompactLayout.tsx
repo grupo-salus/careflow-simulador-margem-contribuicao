@@ -38,12 +38,12 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
   const hasValidSimulation = simulationResult !== null;
 
   return (
-    <div className="max-w-[1920px] mx-auto px-6 sm:px-8 lg:px-12 py-6">
+    <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
       {/* Single Row - 4 Columns Layout */}
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
         {/* Column 1 - Procedure Selection */}
-        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-[600px] flex flex-col">
-          <h3 className="text-sm font-semibold text-careflow-gray-900 mb-4 flex-shrink-0">
+        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
+          <h3 className="text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem] font-semibold text-careflow-gray-900 mb-3 sm:mb-4 flex-shrink-0">
             Selecione o Procedimento
           </h3>
           <div className="flex-1 overflow-y-auto min-h-0">
@@ -56,8 +56,8 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
         </div>
 
         {/* Column 2 - Simulation Parameters */}
-        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-[600px] flex flex-col">
-          <h3 className="text-sm font-semibold text-careflow-gray-900 mb-4 flex-shrink-0">
+        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
+          <h3 className="text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem] font-semibold text-careflow-gray-900 mb-3 sm:mb-4 flex-shrink-0">
             Parâmetros da Simulação
           </h3>
           <div className="flex-1 overflow-y-auto min-h-0">
@@ -72,19 +72,19 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
         </div>
 
         {/* Column 3 - Cost Breakdown */}
-        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-[600px] flex flex-col">
-          <h3 className="text-sm font-semibold text-careflow-gray-900 mb-4 flex-shrink-0">
+        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
+          <h3 className="text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem] font-semibold text-careflow-gray-900 mb-3 sm:mb-4 flex-shrink-0">
             Breakdown de Custos
           </h3>
-          <div className="flex-1 overflow-y-auto min-h-0">
+          <div className="flex-1 overflow-y-auto min-h-0 pr-3">
             {selectedProcedure ? (
-              <div className="space-y-3 text-sm">
+              <div className="space-y-2 sm:space-y-3 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
                 {/* Custo Profissional */}
-                <div className="flex justify-between items-center py-2 border-b border-careflow-gray-100">
-                  <span className="font-medium text-careflow-primary">
+                <div className="flex justify-between items-start py-1.5 sm:py-2 border-b border-careflow-gray-100">
+                  <span className="font-medium text-careflow-primary break-words flex-1 min-w-0 pr-4">
                     Custo profissional
                   </span>
-                  <span className="font-semibold text-careflow-primary">
+                  <span className="font-semibold text-careflow-primary flex-shrink-0">
                     {formatCurrency(
                       selectedProcedure.custoProfissionalPorSessao
                     )}
@@ -95,12 +95,12 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 {selectedProcedure.insumos.map((insumo, index) => (
                   <div
                     key={index}
-                    className="flex justify-between items-center py-2 border-b border-careflow-gray-100 last:border-b-0"
+                    className="flex justify-between items-start py-1.5 sm:py-2 border-b border-careflow-gray-100 last:border-b-0"
                   >
-                    <span className="text-careflow-gray-600 truncate">
+                    <span className="text-careflow-gray-600 break-words flex-1 min-w-0 pr-4">
                       {insumo.nome}
                     </span>
-                    <span className="font-medium text-careflow-gray-900">
+                    <span className="font-medium text-careflow-gray-900 flex-shrink-0">
                       {formatCurrency(insumo.valor)}
                     </span>
                   </div>
@@ -108,8 +108,8 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
               </div>
             ) : (
               <div className="flex items-center justify-center h-full">
-                <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-6 text-center w-full max-w-xs mx-auto">
-                  <p className="text-careflow-gray-500 text-sm">
+                <div className="bg-careflow-gray-50 border-2 border-dashed border-careflow-gray-300 rounded-lg p-4 sm:p-6 text-center w-full max-w-xs mx-auto">
+                  <p className="text-careflow-gray-500 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
                     Selecione um procedimento
                   </p>
                 </div>
@@ -121,8 +121,10 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
           {selectedProcedure && (
             <div className="compact-footer">
               <div className="compact-footer-content">
-                <span className="compact-footer-label">Total sessão:</span>
-                <span className="compact-footer-value">
+                <span className="compact-footer-label text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
+                  Total sessão:
+                </span>
+                <span className="compact-footer-value text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
                   {formatCurrency(
                     selectedProcedure.insumos.reduce(
                       (total, insumo) => total + insumo.valor,
@@ -136,20 +138,20 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
         </div>
 
         {/* Column 4 - Simulation Results */}
-        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-6 h-[600px] flex flex-col">
-          <div className="flex items-center gap-3 mb-4 flex-shrink-0">
-            <h3 className="text-sm font-semibold text-careflow-gray-900">
+        <div className="bg-white rounded-lg border border-careflow-gray-200 shadow-card p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
+          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 flex-shrink-0">
+            <h3 className="text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem] font-semibold text-careflow-gray-900">
               Resultados
             </h3>
           </div>
 
           <div className="flex-1 overflow-y-auto min-h-0">
             {hasValidSimulation ? (
-              <div className="space-y-3 text-sm">
+              <div className="space-y-2 sm:space-y-3 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
                 {/* Custo Total por Sessão */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-red w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <Package className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-red w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <Package className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -162,9 +164,9 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 </div>
 
                 {/* Receita Total */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-green w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <DollarSign className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-green w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <DollarSign className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -177,9 +179,9 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 </div>
 
                 {/* Custo Total Variável */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-orange-dark w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <TrendingDown className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-orange-dark w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <TrendingDown className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -192,9 +194,9 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 </div>
 
                 {/* Margem de Contribuição */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-blue w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <Target className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-blue w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <Target className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -213,9 +215,9 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 </div>
 
                 {/* Margem por Sessão */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-purple w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <Percent className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-purple w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <Percent className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -234,9 +236,9 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 </div>
 
                 {/* Margem de Contribuição % */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-green w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-green w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <TrendingUp className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -255,9 +257,9 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                 </div>
 
                 {/* Lucro por Hora */}
-                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
-                  <div className="icon-box-orange w-10 h-10 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5" />
+                <div className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-careflow-gray-50 rounded">
+                  <div className="hidden 2xl:flex icon-box-orange w-[2rem] h-[2rem] sm:w-[2.5rem] sm:h-[2.5rem] lg:w-[2.25rem] lg:h-[2.25rem] xl:w-[2.5rem] xl:h-[2.5rem] items-center justify-center flex-shrink-0">
+                    <Clock className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-medium text-careflow-gray-900">
@@ -275,9 +277,8 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                       >
                         {formatCurrency(simulationResult.lucroPorHora)}
                       </div>
-                      <div className="text-xs text-careflow-gray-600">
-                        {simulationResult.tempoTotalHoras.toFixed(1)}h de
-                        trabalho total
+                      <div className="text-[0.75rem] text-careflow-gray-600">
+                        {simulationResult.tempoTotalHoras.toFixed(1)}h
                       </div>
                     </div>
                   </div>
