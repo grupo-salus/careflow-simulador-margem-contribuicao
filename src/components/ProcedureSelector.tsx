@@ -84,10 +84,6 @@ export function ProcedureSelector({
 
   return (
     <div className="h-full flex flex-col">
-      <h3 className="text-base sm:text-lg font-semibold text-careflow-gray-900 mb-4 sm:mb-6">
-        Selecione o Procedimento
-      </h3>
-
       <div className="flex-1 overflow-y-auto mb-4">
         <div className="space-y-2">
           {/* Campo de busca */}

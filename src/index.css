@@ -104,6 +104,23 @@
     @apply text-lg sm:text-xl;
   }
 
+  /* Layout compacto - rodapé padronizado */
+  .compact-footer {
+    @apply border-t border-careflow-gray-200 pt-4 mt-4 flex-shrink-0;
+  }
+
+  .compact-footer-content {
+    @apply flex justify-between items-center;
+  }
+
+  .compact-footer-label {
+    @apply font-medium text-careflow-gray-900;
+  }
+
+  .compact-footer-value {
+    @apply font-bold text-careflow-primary;
+  }
+
   /* Responsive spacing utilities */
   .p-responsive {
     @apply p-3 sm:p-4;
