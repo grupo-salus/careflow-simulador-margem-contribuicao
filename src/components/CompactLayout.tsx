@@ -265,14 +265,20 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                         ? "Lucro/Hora"
                         : "Prejuízo/Hora"}
                     </div>
-                    <div
-                      className={`font-bold ${
-                        simulationResult.lucroPorHora >= 0
-                          ? "text-careflow-gray-900"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {formatCurrency(simulationResult.lucroPorHora)}
+                    <div className="flex items-center gap-2">
+                      <div
+                        className={`font-bold ${
+                          simulationResult.lucroPorHora >= 0
+                            ? "text-careflow-gray-900"
+                            : "text-red-600"
+                        }`}
+                      >
+                        {formatCurrency(simulationResult.lucroPorHora)}
+                      </div>
+                      <div className="text-xs text-careflow-gray-600">
+                        {simulationResult.tempoTotalHoras.toFixed(1)}h de
+                        trabalho total
+                      </div>
                     </div>
                   </div>
                 </div>
