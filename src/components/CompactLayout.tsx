@@ -176,6 +176,21 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                   </div>
                 </div>
 
+                {/* Custo Total Variável */}
+                <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
+                  <div className="icon-box-orange-dark w-10 h-10 flex items-center justify-center flex-shrink-0">
+                    <TrendingDown className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-medium text-careflow-gray-900">
+                      Custo Total Variável
+                    </div>
+                    <div className="font-bold text-careflow-gray-900">
+                      {formatCurrency(simulationResult.custoTotalVariavel)}
+                    </div>
+                  </div>
+                </div>
+
                 {/* Margem de Contribuição */}
                 <div className="flex items-center gap-3 p-3 bg-careflow-gray-50 rounded">
                   <div className="icon-box-blue w-10 h-10 flex items-center justify-center flex-shrink-0">
