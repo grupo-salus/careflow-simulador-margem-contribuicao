@@ -145,7 +145,7 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
             </h3>
           </div>
 
-          <div className="flex-1 overflow-y-auto min-h-0">
+          <div className="flex-1 min-h-0">
             {hasValidSimulation ? (
               <div className="space-y-2 sm:space-y-3 text-[0.75rem] sm:text-[0.875rem] lg:text-[0.8125rem] xl:text-[0.875rem]">
                 {/* Custo Total por Sessão */}
@@ -154,11 +154,15 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <Package className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      Custo/Sessão
-                    </div>
-                    <div className="font-bold text-careflow-gray-900">
-                      {formatCurrency(simulationResult.custoVariavelPorSessao)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        Custo/Sessão
+                      </div>
+                      <div className="font-bold text-careflow-gray-900">
+                        {formatCurrency(
+                          simulationResult.custoVariavelPorSessao
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -169,11 +173,13 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <DollarSign className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      Receita Total
-                    </div>
-                    <div className="font-bold text-careflow-gray-900">
-                      {formatCurrency(simulationResult.receitaTotal)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        Receita Total
+                      </div>
+                      <div className="font-bold text-careflow-gray-900">
+                        {formatCurrency(simulationResult.receitaTotal)}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -184,11 +190,13 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <TrendingDown className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      Custo Total Variável
-                    </div>
-                    <div className="font-bold text-careflow-gray-900">
-                      {formatCurrency(simulationResult.custoTotalVariavel)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        Custo Total Variável
+                      </div>
+                      <div className="font-bold text-careflow-gray-900">
+                        {formatCurrency(simulationResult.custoTotalVariavel)}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -199,17 +207,19 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <Target className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      Margem Total
-                    </div>
-                    <div
-                      className={`font-bold ${
-                        simulationResult.margemContribuicao >= 0
-                          ? "text-green-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {formatCurrency(simulationResult.margemContribuicao)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        Margem Total
+                      </div>
+                      <div
+                        className={`font-bold ${
+                          simulationResult.margemContribuicao >= 0
+                            ? "text-green-600"
+                            : "text-red-600"
+                        }`}
+                      >
+                        {formatCurrency(simulationResult.margemContribuicao)}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -220,17 +230,19 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <Percent className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      Margem/Sessão
-                    </div>
-                    <div
-                      className={`font-bold ${
-                        simulationResult.margemPorSessao >= 0
-                          ? "text-careflow-gray-900"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {formatCurrency(simulationResult.margemPorSessao)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        Margem/Sessão
+                      </div>
+                      <div
+                        className={`font-bold ${
+                          simulationResult.margemPorSessao >= 0
+                            ? "text-careflow-gray-900"
+                            : "text-red-600"
+                        }`}
+                      >
+                        {formatCurrency(simulationResult.margemPorSessao)}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -241,17 +253,19 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <TrendingUp className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      Margem %
-                    </div>
-                    <div
-                      className={`font-bold ${
-                        simulationResult.margemPercentual >= 0
-                          ? "text-careflow-gray-900"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {formatPercentage(simulationResult.margemPercentual)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        Margem %
+                      </div>
+                      <div
+                        className={`font-bold ${
+                          simulationResult.margemPercentual >= 0
+                            ? "text-careflow-gray-900"
+                            : "text-red-600"
+                        }`}
+                      >
+                        {formatPercentage(simulationResult.margemPercentual)}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -262,23 +276,25 @@ export const CompactLayout: React.FC<CompactLayoutProps> = ({
                     <Clock className="w-[1rem] h-[1rem] sm:w-[1.25rem] sm:h-[1.25rem] lg:w-[1.125rem] lg:h-[1.125rem] xl:w-[1.25rem] xl:h-[1.25rem]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-careflow-gray-900">
-                      {simulationResult.lucroPorHora >= 0
-                        ? "Lucro/Hora"
-                        : "Prejuízo/Hora"}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`font-bold ${
-                          simulationResult.lucroPorHora >= 0
-                            ? "text-careflow-gray-900"
-                            : "text-red-600"
-                        }`}
-                      >
-                        {formatCurrency(simulationResult.lucroPorHora)}
+                    <div className="flex items-center justify-between">
+                      <div className="font-medium text-careflow-gray-900">
+                        {simulationResult.lucroPorHora >= 0
+                          ? "Lucro/Hora"
+                          : "Prejuízo/Hora"}
                       </div>
-                      <div className="text-[0.75rem] text-careflow-gray-600">
-                        {simulationResult.tempoTotalHoras.toFixed(1)}h
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`font-bold ${
+                            simulationResult.lucroPorHora >= 0
+                              ? "text-careflow-gray-900"
+                              : "text-red-600"
+                          }`}
+                        >
+                          {formatCurrency(simulationResult.lucroPorHora)}
+                        </div>
+                        <div className="text-[0.75rem] text-careflow-gray-600">
+                          {simulationResult.tempoTotalHoras.toFixed(1)}h
+                        </div>
                       </div>
                     </div>
                   </div>
